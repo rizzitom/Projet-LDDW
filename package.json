@@ -16,6 +16,7 @@
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
     "vue-material-design-icons": "^4.11.0",
+    "vue-undraw": "^2.0.13",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
