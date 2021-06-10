@@ -1,11 +1,23 @@
 <template>
-  <button
-    :type="type"
-    class="bg-purple-600 text-white py-2 px-4 rounded-xl text-2xl"
-    @click="$emit('click')"
-  >
-    <slot />
-  </button>
+  <div>
+    <NuxtLink
+      v-if="anchor"
+      :to="to"
+      :type="type"
+      class="bg-purple-600 text-white py-2 px-4 rounded-xl text-2xl hover:bg-purple-700 duration-150"
+      @click="$emit('click')"
+    >
+      <slot />
+    </NuxtLink>
+    <button
+      v-else
+      :type="type"
+      class="bg-purple-600 text-white py-2 px-4 rounded-xl text-2xl hover:bg-purple-700 duration-150"
+      @click="$emit('click')"
+    >
+      <slot />
+    </button>
+  </div>
 </template>
 
 <script>
@@ -16,6 +28,14 @@ export default {
     type: {
       type: String,
       default: 'button'
+    },
+    anchor: {
+      type: Boolean,
+      default: false
+    },
+    to: {
+      type: String,
+      default: null
     }
   }
 }
