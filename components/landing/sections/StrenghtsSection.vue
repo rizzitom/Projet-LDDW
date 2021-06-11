@@ -52,6 +52,18 @@
             Google Lighthouse</a>.
         </template>
       </strenght-card>
+
+      <strenght-card icon="code" class="col-span-12">
+        <template #name>
+          Développement moderne
+        </template>
+        <template #description>
+          Notre environnement de développement varie en fonction des projets.
+          Nous souhaitons toujours utiliser les dernières technologies dans le
+          monde du développement web. C'est pour cette raison que nous utilisons
+          des outils comme Vue, Firebase, Tailwind CSS et bien plus.
+        </template>
+      </strenght-card>
     </div>
   </landing-section>
 </template>
