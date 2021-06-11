@@ -12,19 +12,20 @@
       <l-button class="ml-5 hidden sm:block" anchor to="test">
         Se connecter
       </l-button>
-      <l-button class="sm:hidden">
-        <menu-icon />
+      <l-button class="sm:hidden flex">
+        <span class="material-icons flex">
+          menu
+        </span>
       </l-button>
     </div>
   </header>
 </template>
 
 <script>
-import MenuIcon from 'vue-material-design-icons/Menu.vue'
 import LButton from '../common/LButton.vue'
 
 export default {
   name: 'MainHeader',
-  components: { LButton, MenuIcon }
+  components: { LButton }
 }
 </script>
