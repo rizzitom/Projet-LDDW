@@ -1,5 +1,19 @@
 <template>
-  <h1 class="px-5 font-semibold text-2xl mt-5">
-    Le design du web
-  </h1>
+  <div>
+    <first-section />
+    <strenghts-section />
+  </div>
 </template>
+
+<script>
+import FirstSection from '../components/landing/sections/FirstSection.vue'
+import StrenghtsSection from '../components/landing/sections/StrenghtsSection.vue'
+
+export default {
+  components: { FirstSection, StrenghtsSection }
+}
+</script>
+
+<style>
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+</style>
