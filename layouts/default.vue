@@ -1,16 +1,18 @@
 <template>
   <div>
-    <main-header />
+    <l-header />
     <main class="pt-20">
       <nuxt />
     </main>
+    <l-footer />
   </div>
 </template>
 
 <script>
-import MainHeader from '../components/navigation/MainHeader.vue'
+import LFooter from '../components/navigation/LFooter.vue'
+import LHeader from '../components/navigation/LHeader.vue'
 
 export default {
-  components: { MainHeader }
+  components: { LHeader, LFooter }
 }
 </script>
