@@ -3,7 +3,6 @@
     <NuxtLink
       v-if="anchor"
       :to="to"
-      :type="type"
       class="bg-purple-600 font-semibold text-white py-2 px-5 rounded-xl text-2xl hover:bg-purple-700 duration-150"
       @click="$emit('click')"
     >
