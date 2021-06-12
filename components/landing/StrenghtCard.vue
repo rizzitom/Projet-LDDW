@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl shadow-sm border bg-white col-span-6 p-8">
+  <div class="rounded-xl shadow-sm border bg-white p-8">
     <div class="flex items-center mb-5">
       <div
         v-if="icon"
