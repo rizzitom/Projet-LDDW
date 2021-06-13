@@ -4,20 +4,26 @@
       Votre projet en 4 étapes
     </h2>
 
-    <div class="grid grid-cols-12 gap-y-10">
+    <div class="grid grid-cols-12 grid-rows-4 gap-y-24">
       <strenght-card class="col-span-8" icon="looks_one">
         <template #name>
           Confirmation du cahier des charges
         </template>
         <template #description>
-          En se basant sur votre demande, nous
-          établissons un premier cahier des charges qui peut être modifié avant
-          que le développement ne commence. Tout doit être clarifié sur ce
-          document et tous les détails doivent être notés. Une fois validé, le
-          cahier des charge ne peut plus être changé.
+          En se basant sur votre demande, nous établissons un premier cahier des
+          charges qui peut être modifié avant que le développement ne commence.
+          Tout doit être clarifié sur ce document et tous les détails doivent
+          être notés. Une fois validé, le cahier des charge ne peut plus être
+          changé.
         </template>
       </strenght-card>
+      <div
+        class="bg-step-one-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+      />
 
+      <div
+        class="bg-step-two-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+      />
       <strenght-card class="col-span-8 col-end-13" icon="looks_two">
         <template #name>
           Paiement et début du développement
@@ -41,7 +47,13 @@
           pouvez échanger avec nous et demander une modification.
         </template>
       </strenght-card>
+      <div
+        class="bg-step-three-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+      />
 
+      <div
+        class="bg-step-four-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+      />
       <strenght-card class="col-span-8 col-end-13" icon="looks_4">
         <template #name>
           Livraison du projet
