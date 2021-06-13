@@ -1,8 +1,8 @@
 <template>
-  <landing-section class="py-36" @scroll.native="handle">
+  <landing-section class="py-20 md:py-36" @scroll.native="handle">
     <div class="flex">
       <div class="flex-1">
-        <h1 class="text-8xl font-semibold">
+        <h1 class="text-7xl md:text-8xl font-semibold">
           Création de sites internet sur mesure
         </h1>
         <span class="w-9/12 flex my-10">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div
-        class="bg-first-section-illustration w-1/2 bg-center bg-contain bg-no-repeat ml-10"
+        class="bg-first-section-illustration w-1/2 bg-center bg-contain bg-no-repeat ml-10 hidden lg:block"
       />
     </div>
   </landing-section>

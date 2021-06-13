@@ -1,11 +1,11 @@
 <template>
-  <landing-section class="bg-gray-100 py-36">
+  <landing-section class="bg-gray-100 py-20 md:py-36">
     <h2 class="text-5xl font-semibold mb-20">
       Votre projet en 4 étapes
     </h2>
 
-    <div class="grid grid-cols-12 grid-rows-4 gap-y-24">
-      <strenght-card class="col-span-8" icon="looks_one">
+    <div class="grid grid-cols-12 lg:grid-rows-4 gap-y-12 md:gap-y-24">
+      <strenght-card class="col-span-12 lg:col-span-8" icon="looks_one">
         <template #name>
           Confirmation du cahier des charges
         </template>
@@ -18,13 +18,13 @@
         </template>
       </strenght-card>
       <div
-        class="bg-step-one-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+        class="bg-step-one-illustration col-span-4 bg-center bg-contain bg-no-repeat hidden lg:block"
       />
 
       <div
-        class="bg-step-two-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+        class="bg-step-two-illustration col-span-4 bg-center bg-contain bg-no-repeat hidden lg:block"
       />
-      <strenght-card class="col-span-8 col-end-13" icon="looks_two">
+      <strenght-card class="col-span-12 lg:col-span-8 col-end-13" icon="looks_two">
         <template #name>
           Paiement et début du développement
         </template>
@@ -36,7 +36,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card class="col-span-8" icon="looks_3">
+      <strenght-card class="col-span-12 lg:col-span-8" icon="looks_3">
         <template #name>
           Révisions et validation
         </template>
@@ -48,13 +48,13 @@
         </template>
       </strenght-card>
       <div
-        class="bg-step-three-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+        class="bg-step-three-illustration col-span-4 bg-center bg-contain bg-no-repeat hidden lg:block"
       />
 
       <div
-        class="bg-step-four-illustration col-span-4 bg-center bg-contain bg-no-repeat"
+        class="mr-24 bg-step-four-illustration col-span-4 bg-center bg-contain bg-no-repeat hidden lg:block"
       />
-      <strenght-card class="col-span-8 col-end-13" icon="looks_4">
+      <strenght-card class="col-span-12 lg:col-span-8 col-end-13" icon="looks_4">
         <template #name>
           Livraison du projet
         </template>

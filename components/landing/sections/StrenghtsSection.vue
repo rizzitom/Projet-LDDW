@@ -1,11 +1,11 @@
 <template>
-  <landing-section class="py-36">
+  <landing-section class="py-20 md:py-36">
     <h2 class="text-5xl font-semibold mb-20">
       Nos forces
     </h2>
 
-    <div class="grid grid-cols-12 gap-20">
-      <strenght-card icon="forum" class="col-span-6">
+    <div class="grid grid-cols-12 gap-y-12 md:gap-16">
+      <strenght-card icon="forum" class="col-span-12 lg:col-span-6">
         <template #name>
           Échange reactif
         </template>
@@ -16,7 +16,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card icon="published_with_changes" class="col-span-6">
+      <strenght-card icon="published_with_changes" class="col-span-12 lg:col-span-6">
         <template #name>
           Révisions illimités
         </template>
@@ -27,7 +27,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card icon="euro" class="col-span-6">
+      <strenght-card icon="euro" class="col-span-12 lg:col-span-6">
         <template #icon>
           euro
         </template>
@@ -41,7 +41,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card icon="bolt" class="col-span-6">
+      <strenght-card icon="bolt" class="col-span-12 lg:col-span-6">
         <template #name>
           Performance et sécurité
         </template>
@@ -56,7 +56,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card icon="code" class="col-span-6">
+      <strenght-card icon="code" class="col-span-12 lg:col-span-6">
         <template #name>
           Développement moderne
         </template>
