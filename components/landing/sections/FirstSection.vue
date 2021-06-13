@@ -20,7 +20,9 @@
           </l-button>
         </div>
       </div>
-      <img src="/undraw_programmer.svg" alt="" class="block w-1/2">
+      <div
+        class="bg-first-section-illustration w-1/2 bg-center bg-contain bg-no-repeat ml-10"
+      />
     </div>
   </landing-section>
 </template>
