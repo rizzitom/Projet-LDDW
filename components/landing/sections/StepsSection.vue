@@ -5,7 +5,7 @@
     </h2>
 
     <div class="grid grid-cols-12 gap-y-10">
-      <strenght-card class="col-start-2 col-span-10" icon="looks_one">
+      <strenght-card class="col-span-8" icon="looks_one">
         <template #name>
           Confirmation du cahier des charges
         </template>
@@ -18,7 +18,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card class="col-start-2 col-span-10" icon="looks_two">
+      <strenght-card class="col-span-8 col-end-13" icon="looks_two">
         <template #name>
           Paiement et début du développement
         </template>
@@ -30,7 +30,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card class="col-start-2 col-span-10" icon="looks_3">
+      <strenght-card class="col-span-8" icon="looks_3">
         <template #name>
           Révisions et validation
         </template>
@@ -42,7 +42,7 @@
         </template>
       </strenght-card>
 
-      <strenght-card class="col-start-2 col-span-10" icon="looks_4">
+      <strenght-card class="col-span-8 col-end-13" icon="looks_4">
         <template #name>
           Livraison du projet
         </template>
