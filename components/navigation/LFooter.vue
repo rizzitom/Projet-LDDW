@@ -29,7 +29,7 @@
         </h3>
 
         <div class="mt-5 font-thin text-2xl grid gap-y-2">
-          <NuxtLink to="#" class="hover:underline w-max">
+          <NuxtLink to="faq" class="hover:underline w-max">
             FAQ
           </NuxtLink>
         </div>
