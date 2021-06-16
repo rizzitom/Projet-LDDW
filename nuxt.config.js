@@ -18,15 +18,17 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+      }
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // CSS file in the project
-    '@/assets/css/reset.css',
-    '@mdi/font/css/materialdesignicons.min.css'
+    '@/assets/css/reset.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
