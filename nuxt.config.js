@@ -1,9 +1,6 @@
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-  router: {
-    base: '/Projet-LDDW/'
-  },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -12,7 +9,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Nous sommes une équipe de développeurs prêts à vous accompagner dans la réalisation de votre projet web. Nous étudions chaque cas avec la plus grande attention.'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -44,15 +46,5 @@ export default {
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
-
-  // Google Fonts
-  googleFonts: {
-    families: {
-      Inter: true
-    },
-    display: 'swap',
-    preload: true,
-    subsets: 'latin'
-  }
+  build: {}
 }
