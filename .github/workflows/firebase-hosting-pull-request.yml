@@ -35,8 +35,8 @@ jobs:
           name: dist
           path: dist
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: w9jds/firebase-action@master
         with:
-          firebaseServiceAccount: ${{ secrets.FIREBASE_TOKEN }}
-          expires: 7d
-          projectId: le-design-du-web
+          args: deploy --expires 7d
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
