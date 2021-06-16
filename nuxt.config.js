@@ -45,6 +45,10 @@ export default {
     '@nuxtjs/robots'
   ],
 
+  sitemap: {
+    generate: true
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 }
