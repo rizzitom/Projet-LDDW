@@ -12,7 +12,22 @@ import StepsSection from '../components/landing/sections/StepsSection.vue'
 import StrenghtsSection from '../components/landing/sections/StrenghtsSection.vue'
 
 export default {
-  components: { FirstSection, StrenghtsSection, StepsSection }
+  components: { FirstSection, StrenghtsSection, StepsSection },
+
+  head () {
+    return {
+      title:
+        "Le design du web - Création de sites internet dans les règles de l'art",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Nous sommes une équipe de développeurs prêts à vous accompagner dans la réalisation de votre projet web. Nous étudions chaque cas avec la plus grande attention.'
+        }
+      ]
+    }
+  }
 }
 </script>
 

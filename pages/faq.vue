@@ -79,6 +79,12 @@
 <script>
 import LExpand from '../components/common/LExpand.vue'
 export default {
-  components: { LExpand }
+  components: { LExpand },
+
+  head () {
+    return {
+      title: 'Le design du web - FAQ'
+    }
+  }
 }
 </script>
