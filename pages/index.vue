@@ -38,5 +38,5 @@ export default {
 </script>
 
 <style>
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap';
 </style>
