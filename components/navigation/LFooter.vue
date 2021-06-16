@@ -1,11 +1,11 @@
 <template>
   <footer class="bg-gray-900 text-white grid grid-cols-12 pt-16 pb-36">
-    <div class="col-start-2 col-span-10 grid grid-cols-12">
-      <div class="col-span-4 lg:col-span-3">
+    <div class="col-start-2 col-span-10 grid sm-grid-cols-2 grid-cols-12 gap-14">
+      <div class="col-span-12 sm:col-span-4 lg:col-span-3">
         <span class="font-light text-2xl">© Le design du web</span>
       </div>
 
-      <div class="col-span-4 lg:col-span-3">
+      <div class="col-span-6 sm:col-span-4 lg:col-span-3">
         <h3 class="font-medium">
           Nos réseaux sociaux
         </h3>
@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div class="col-span-4 lg:col-span-3">
+      <div class="col-span-6 sm:col-span-4 lg:col-span-3">
         <h3 class="font-medium">
           Informations
         </h3>
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="col-span-4 lg:col-span-3">
+      <div class="col-span-6 sm:col-span-4 lg:col-span-3">
         <h3 class="font-medium">
           Mon compte
         </h3>
