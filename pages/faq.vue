@@ -8,7 +8,20 @@
 
     <div class="grid grid-cols-12">
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-xl rounded-b-none border-b-0"
+        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-xl rounded-b-none border-b-0 pb-4"
+      >
+        <template #title>
+          Comment suivre l'avancement de ma commande ?
+        </template>
+        <template #description>
+          Vous pouvez à tout moment vérifier l'étape de votre commande dans
+          votre espace client. La mise à jour est en temps réel et vous pouvez
+          être notifié par email si vous le souhaitez.
+        </template>
+      </l-expand>
+
+      <l-expand
+        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-t-none rounded-b-none border-b-0 pb-4"
       >
         <template #title>
           Comment est-ce que règle ma commande ?
@@ -21,15 +34,14 @@
       </l-expand>
 
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-b-none rounded-t-none border-b-0 py-4"
+        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-b-none rounded-t-none border-b-0 pb-4"
       >
         <template #title>
           Proposez-vous des services dans le webdesign ?
         </template>
         <template #description>
-          Actuellement, nous ne proposons pas de services en ce qui concerne le
-          design. Nous cherchons néanmoins à renforcer notre équipe pour ainsi
-          avoir les compétences nécéssaires et vous le proposer.
+          Si vous n'avez pas d'idée précise, nous essaieront toujours de
+          proposer un design simple et intuitif pour votre projet.
         </template>
       </l-expand>
 
@@ -37,17 +49,12 @@
         class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-none rounded-b-xl border-t-0"
       >
         <template #title>
-          Pourquoi n'affichez-vous pas les tarifs ?
+          Quels types de site réalisez vous ?
         </template>
         <template #description>
-          Chaque projet est unique. C'est pour cette raison que nous avons
-          choisi de ne pas afficher de tarifs fixes pour le moment. Le prix
-          total du projet est calculé selon plusieurs critères:
-          <ul class="list-disc list-inside pt-5">
-            <li>Le type de site demandé</li>
-            <li>La durée totale estimée du projet</li>
-            <li>Les technologies utilisées</li>
-          </ul>
+          Nous sommes prêts à réaliser n'importe quel type de site dans la
+          limite de notre stack technique. Nous refusons catégoriquement les
+          projets e-commerce qui sont trop gros pour notre équipe.
         </template>
       </l-expand>
 
