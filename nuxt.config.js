@@ -40,7 +40,9 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
