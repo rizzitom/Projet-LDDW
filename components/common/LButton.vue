@@ -5,20 +5,20 @@
       :to="to"
       :class="[
         {
-          'bg-purple-600': !variant,
+          'bg-gray-700': !variant,
           'text-white': !variant,
           'duration-150': !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
-          'hover:bg-purple-700': !variant,
-          'focus:bg-purple-700': !variant,
+          'hover:bg-gray-900': !variant,
+          'focus:bg-gray-900': !variant,
           'font-semibold': !variant,
 
           'font-medium': variant,
-          'text-purple-600': variant,
-          'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
+          'text-gray-700': variant,
+          'hover:text-gray-900': variant,
+          'focus:text-gray-900': variant,
           'duration-150': variant
         },
         'align-middle',
@@ -34,20 +34,20 @@
       :type="type"
       :class="[
         {
-          'bg-purple-600': !variant,
+          'bg-gray-700': !variant,
           'text-white': !variant,
           'duration-150': !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
-          'hover:bg-purple-700': !variant,
-          'focus:bg-purple-700': !variant,
+          'hover:bg-gray-900': !variant,
+          'focus:bg-gray-900': !variant,
           'font-semibold': !variant,
 
           'font-medium': variant,
-          'text-purple-600': variant,
-          'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
+          'text-gray-700': variant,
+          'hover:text-gray-900': variant,
+          'focus:text-gray-900': variant,
           'duration-150': variant
         },
         'align-middle',

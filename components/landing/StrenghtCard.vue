@@ -3,7 +3,7 @@
     <div class="flex items-center mb-5">
       <div
         v-if="icon"
-        class="bg-purple-600 w-min text-white p-4 rounded-xl shadow mr-5 flex"
+        class="bg-gray-700 w-min text-white p-4 rounded-xl shadow mr-5 flex"
       >
         <div class="material-icons">
           {{ icon }}

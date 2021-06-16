@@ -1,7 +1,7 @@
 <template>
   <div class="pb-36">
     <h1
-      class="py-36 mb-36 text-white text-5xl font-semibold text-center bg-purple-600"
+      class="py-36 mb-36 text-white text-5xl font-semibold text-center bg-gray-700"
     >
       Foire aux questions
     </h1>
