@@ -7,7 +7,7 @@
 
       <div class="col-span-4 lg:col-span-3">
         <h3 class="font-medium">
-          Liens
+          Nos réseaux sociaux
         </h3>
 
         <div class="mt-5 font-thin text-2xl grid gap-y-2">
@@ -18,7 +18,7 @@
             Twitter
           </NuxtLink>
           <NuxtLink to="#" class="hover:underline w-max">
-            Facebook
+            Instagram
           </NuxtLink>
         </div>
       </div>
@@ -31,6 +31,9 @@
         <div class="mt-5 font-thin text-2xl grid gap-y-2">
           <NuxtLink to="faq" class="hover:underline w-max">
             FAQ
+          </NuxtLink>
+          <NuxtLink to="faq" class="hover:underline w-max">
+            Tarifs
           </NuxtLink>
         </div>
       </div>
@@ -46,6 +49,9 @@
           </NuxtLink>
           <NuxtLink to="#" class="hover:underline w-max">
             Créer un compte
+          </NuxtLink>
+          <NuxtLink to="#" class="hover:underline w-max">
+            Paramètres
           </NuxtLink>
         </div>
       </div>
