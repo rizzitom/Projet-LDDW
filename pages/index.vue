@@ -25,6 +25,12 @@ export default {
           content:
             'Nous sommes une équipe de développeurs prêts à vous accompagner dans la réalisation de votre projet web. Nous étudions chaque cas avec la plus grande attention.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
       ]
     }
   }

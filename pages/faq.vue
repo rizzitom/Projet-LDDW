@@ -83,7 +83,13 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - FAQ'
+      title: 'Le design du web - FAQ',
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ]
     }
   }
 }
