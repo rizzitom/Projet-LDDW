@@ -22,7 +22,8 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // CSS file in the project
-    '@/assets/css/reset.css'
+    '@/assets/css/reset.css',
+    'material-design-icons/icofont/material-icons.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
