@@ -46,6 +46,8 @@ export default {
   ],
 
   sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://ledesignduweb.fr',
     generate: true
   },
 
