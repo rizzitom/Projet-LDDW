@@ -23,7 +23,7 @@ export default {
   css: [
     // CSS file in the project
     '@/assets/css/reset.css',
-    'material-design-icons/icofont/material-icons.css'
+    '@mdi/font/css/materialdesignicons.min.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
