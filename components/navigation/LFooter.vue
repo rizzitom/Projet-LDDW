@@ -10,7 +10,7 @@
           Nos réseaux sociaux
         </h3>
 
-        <div class="mt-5 font-thin text-2xl grid gap-y-2">
+        <div class="mt-5 font-light text-2xl grid gap-y-2">
           <NuxtLink to="#" class="hover:underline w-max">
             Discord
           </NuxtLink>
@@ -28,7 +28,7 @@
           Informations
         </h3>
 
-        <div class="mt-5 font-thin text-2xl grid gap-y-2">
+        <div class="mt-5 font-light text-2xl grid gap-y-2">
           <NuxtLink to="faq" class="hover:underline w-max">
             FAQ
           </NuxtLink>
@@ -43,7 +43,7 @@
           Mon compte
         </h3>
 
-        <div class="mt-5 font-thin text-2xl grid gap-y-2">
+        <div class="mt-5 font-light text-2xl grid gap-y-2">
           <NuxtLink to="#" class="hover:underline w-max">
             Mes commandes
           </NuxtLink>

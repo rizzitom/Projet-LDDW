@@ -79,6 +79,18 @@
 <script>
 import LExpand from '../components/common/LExpand.vue'
 export default {
-  components: { LExpand }
+  components: { LExpand },
+
+  head () {
+    return {
+      title: 'Le design du web - FAQ',
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ]
+    }
+  }
 }
 </script>
