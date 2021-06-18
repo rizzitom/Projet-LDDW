@@ -14,7 +14,7 @@
       <l-button class="mx-5" variant anchor to="faq">
         FAQ
       </l-button>
-      <l-button class="mx-5" variant>
+      <l-button class="mx-5" variant anchor to="pricing">
         Tarifs
       </l-button>
       <l-button class="mx-5" variant>
