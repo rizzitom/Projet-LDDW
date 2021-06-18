@@ -1,6 +1,6 @@
 <template>
-  <div class="rounded-2xl shadow-lg border">
-    <div class="p-8">
+  <div class="pricing-card rounded-2xl shadow-lg border h-auto">
+    <div class="p-8 h-auto">
       <h2 class="text-4xl font-medium">
         {{ name }}
       </h2>
@@ -9,7 +9,7 @@
         <div class="text-7xl font-light block">
           {{ price }}<span class="text-3xl">€</span>
         </div>
-        <span>par jour</span>
+        <span>{{ subheading }}</span>
       </div>
 
       <div class="my-12">
@@ -57,6 +57,10 @@ export default {
       type: Number,
       required: true
     },
+    subheading: {
+      type: String,
+      required: true
+    },
     features: {
       type: Array,
       required: true
@@ -68,3 +72,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.pricing-card {
+  height: fit-content;
+}
+</style>
