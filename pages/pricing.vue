@@ -15,7 +15,7 @@
         <l-pricing-card
           class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 sm:mr-8 mb-12 sm:mb-0"
           name="Standard"
-          :price="20"
+          :price="40"
           subheading="par jour"
           :features="[
             '5 révisions gratuites',
