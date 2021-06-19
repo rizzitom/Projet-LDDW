@@ -1,5 +1,5 @@
 <template>
-  <div class="pricing-card rounded-2xl shadow-lg border h-auto">
+  <div class="shadow h-auto rounded-2xl">
     <div class="p-8 h-auto">
       <h2 class="text-4xl font-medium">
         {{ name }}
@@ -34,7 +34,7 @@
     </div>
     <div
       v-if="warn"
-      class="bg-yellow-200 py-6 px-4 rounded-b-xl text-2xl text-center leading-relaxed"
+      class="bg-yellow-200 py-4 px-3 rounded-b-xl text-2xl text-center leading-relaxed"
     >
       {{ warn }}
     </div>
@@ -72,9 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.pricing-card {
-  height: fit-content;
-}
-</style>
