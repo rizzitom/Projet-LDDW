@@ -65,15 +65,7 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - Formules et tarifs',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Découvrez nos formules'
-        }
-      ]
+      title: 'Le design du web - Formules et tarifs'
     }
   }
 }
