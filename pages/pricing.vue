@@ -11,46 +11,45 @@
         </span>
       </div>
 
-      <div class="grid grid-cols-12 my-2 gap-y-12 md:gap-12">
+      <div class="flex flex-col sm:flex-row sm:justify-center sm:items-end">
         <l-pricing-card
-          class="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-2 lg:col-end-6"
+          class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 sm:mr-8 mb-12 sm:mb-0"
           name="Standard"
-          :price="40"
+          :price="20"
           subheading="par jour"
           :features="[
-            'Révisions illimités',
+            '5 révisions gratuites',
             'Support disponible 7j/7',
-            'Avancement en temps réel',
+            'Suivi de commande en temps réel',
             'Accessibilité et performance inclus'
           ]"
           warn="5 jours de travail minimum pour sélectionner cette formule"
         />
         <l-pricing-card
-          class="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-8 lg:col-end-12"
+          class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
           name="Flexible"
           :price="7"
           subheading="par heure"
           :features="[
-            'Révisions illimités',
+            '5 révisions gratuites',
             'Support disponible 7j/7',
-            'Avancement en temps réel',
+            'Suivi de commande en temps réel',
             'Accessibilité et performance inclus'
           ]"
         />
-
-        <div
-          class="col-span-12 lg:col-start-2 lg:col-end-12 mt-24 rounded-2xl shadow-lg p-8 bg-purple-600 text-white"
-        >
-          <h3 class="font-medium text-3xl mb-3">
-            Un doute, une question ?
-          </h3>
-          <p>
-            <NuxtLink class="underline inline-block" to="contact">
-              Contactez nous
-            </NuxtLink>
-            pour avoir des informations supplémentaires sur la tarification
-          </p>
-        </div>
+      </div>
+      <div
+        class="w-full mt-24 rounded-2xl shadow-lg p-8 bg-purple-600 text-white"
+      >
+        <h3 class="font-medium text-3xl mb-3">
+          Un doute, une question ?
+        </h3>
+        <p>
+          <NuxtLink class="underline inline-block" to="contact">
+            Contactez nous
+          </NuxtLink>
+          pour avoir des informations supplémentaires sur la tarification
+        </p>
       </div>
     </landing-section>
   </div>
