@@ -34,7 +34,7 @@
     </div>
     <div
       v-if="warn"
-      class="bg-yellow-200 py-6 px-4 rounded-b-xl text-2xl text-center leading-relaxed"
+      class="bg-yellow-200 py-4 px-3 rounded-b-xl text-2xl text-center leading-relaxed"
     >
       {{ warn }}
     </div>
