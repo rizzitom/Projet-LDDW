@@ -1,0 +1,80 @@
+<template>
+  <div class="pricing-card rounded-2xl shadow-lg border h-auto">
+    <div class="p-8 h-auto">
+      <h2 class="text-4xl font-medium">
+        {{ name }}
+      </h2>
+
+      <div class="flex flex-col items-center my-14">
+        <div class="text-7xl font-light block">
+          {{ price }}<span class="text-3xl">€</span>
+        </div>
+        <span>{{ subheading }}</span>
+      </div>
+
+      <div class="my-12">
+        <ul class="text-2xl">
+          <li
+            v-for="(f, i) in features"
+            :key="i"
+            class="flex items-center py-4"
+            :class="{ 'border-b': i !== features.length - 1 }"
+          >
+            <span class="material-icons mr-5 text-green-600">
+              check
+            </span>
+            {{ f }}
+          </li>
+        </ul>
+      </div>
+
+      <l-button class="grid grid-cols-1">
+        Sélectionner
+      </l-button>
+    </div>
+    <div
+      v-if="warn"
+      class="bg-yellow-200 py-6 px-4 rounded-b-xl text-2xl text-center leading-relaxed"
+    >
+      {{ warn }}
+    </div>
+  </div>
+</template>
+
+<script>
+import LButton from '../common/LButton.vue'
+
+export default {
+  name: 'LPricingCard',
+  components: { LButton },
+
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    },
+    subheading: {
+      type: String,
+      required: true
+    },
+    features: {
+      type: Array,
+      required: true
+    },
+    warn: {
+      type: String,
+      default: null
+    }
+  }
+}
+</script>
+
+<style scoped>
+.pricing-card {
+  height: fit-content;
+}
+</style>
