@@ -1,5 +1,5 @@
 <template>
-  <div class="pricing-card rounded-2xl shadow-lg border h-auto">
+  <div class="shadow h-auto rounded-2xl">
     <div class="p-8 h-auto">
       <h2 class="text-4xl font-medium">
         {{ name }}
@@ -72,9 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.pricing-card {
-  height: fit-content;
-}
-</style>
