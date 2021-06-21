@@ -39,7 +39,7 @@
         />
       </div>
       <div
-        class="w-full mt-24 rounded-2xl shadow-lg p-8 bg-purple-600 text-white"
+        class="w-full mt-24 rounded-xl shadow-lg p-8 bg-purple-600 text-white"
       >
         <h3 class="font-medium text-3xl mb-3">
           Un doute, une question ?
