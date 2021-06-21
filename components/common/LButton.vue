@@ -7,7 +7,6 @@
         {
           'bg-purple-600': !variant,
           'text-white': !variant,
-          'duration-150': !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
@@ -18,12 +17,13 @@
           'font-medium': variant,
           'text-purple-600': variant,
           'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
-          'duration-150': variant
+          'focus:text-purple-400': variant
         },
         'align-middle',
         'focus:outline-none',
-        'text-2xl'
+        'text-2xl',
+        'duration-150',
+        'transition'
       ]"
       @click="$emit('click')"
     >
@@ -36,7 +36,7 @@
         {
           'bg-purple-600': !variant,
           'text-white': !variant,
-          'duration-150': !variant,
+          transition: !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
@@ -47,12 +47,13 @@
           'font-medium': variant,
           'text-purple-600': variant,
           'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
-          'duration-150': variant
+          'focus:text-purple-400': variant
         },
         'align-middle',
         'focus:outline-none',
-        'text-2xl'
+        'text-2xl',
+        'duration-150',
+        'transition'
       ]"
       @click="$emit('click')"
     >
@@ -79,6 +80,10 @@ export default {
       default: null
     },
     variant: {
+      type: Boolean,
+      default: false
+    },
+    large: {
       type: Boolean,
       default: false
     }
