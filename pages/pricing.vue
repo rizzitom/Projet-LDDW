@@ -61,6 +61,7 @@ import LPricingCard from '../components/pricing/LPricingCard.vue'
 
 export default {
   components: { LandingSection, LPricingCard },
+  layout: 'main',
 
   head () {
     return {
