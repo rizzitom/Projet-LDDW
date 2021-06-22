@@ -25,11 +25,17 @@
     <div
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
-      <l-button class="ml-5 hidden sm:block" anchor to="login">
+      <l-button
+        v-if="!$store.state.currentUser"
+        class="ml-5 hidden sm:block"
+        anchor
+        to="login"
+      >
         Se connecter
       </l-button>
-      <l-button class="sm:hidden flex">
-        <span class="material-icons flex">
+      <l-user-menu v-else class="hidden sm:block" />
+      <l-button class="sm:hidden" variant>
+        <span class="material-icons">
           menu
         </span>
       </l-button>
@@ -39,9 +45,10 @@
 
 <script>
 import LButton from '../common/LButton.vue'
+import LUserMenu from './LUserMenu.vue'
 
 export default {
   name: 'MainHeader',
-  components: { LButton }
+  components: { LButton, LUserMenu }
 }
 </script>
