@@ -32,7 +32,7 @@
           <NuxtLink to="faq" class="hover:underline w-max">
             FAQ
           </NuxtLink>
-          <NuxtLink to="faq" class="hover:underline w-max">
+          <NuxtLink to="pricing" class="hover:underline w-max">
             Tarifs
           </NuxtLink>
         </div>
