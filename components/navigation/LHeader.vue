@@ -25,7 +25,7 @@
     <div
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
-      <l-button class="ml-5 hidden sm:block" anchor to="#">
+      <l-button class="ml-5 hidden sm:block" anchor to="login">
         Se connecter
       </l-button>
       <l-button class="sm:hidden flex">
