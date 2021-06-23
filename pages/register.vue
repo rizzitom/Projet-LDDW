@@ -188,7 +188,7 @@ export default {
         )
         .then((userObject) => {
           userObject.user.sendEmailVerification()
-          return userObject.user.updateProfile({
+          userObject.user.updateProfile({
             displayName: this.newUser.username
           })
         })
