@@ -6,7 +6,7 @@
       class="col-start-2 sm:col-start-2 col-span-6 sm:col-span-3 font-bold flex items-center"
     >
       <NuxtLink to="/">
-        <img src="logo.svg" alt="logo du studio" class="h-10">
+        <img src="/logo.svg" alt="logo du studio" class="h-10">
       </NuxtLink>
     </div>
 
@@ -26,7 +26,7 @@
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
       <l-button
-        v-if="!$store.state.currentUser"
+        v-if="$store && !$store.state.currentUser"
         class="ml-5 hidden sm:block"
         anchor
         to="login"

@@ -1,6 +1,7 @@
 <template>
   <div class="relative text-gray-700 h-3/4">
     <div
+      v-if="$store && $store.state.currentUser"
       class="flex items-center select-none cursor-pointer h-full hover:text-gray-400 duration-150"
       @click="toggleMenu"
     >
