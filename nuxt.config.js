@@ -42,7 +42,27 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyCHI2raBVoIWwApXxevChfIw1T15d9Yv2c',
+          authDomain: 'le-design-du-web.firebaseapp.com',
+          projectId: 'le-design-du-web',
+          storageBucket: 'le-design-du-web.appspot.com',
+          messagingSenderId: '1:468487458462:web:837f472606ff7a9d79b58f',
+          appId: 'G-HKBR9SHTNX'
+        },
+        services: {
+          auth: {
+            initialize: {
+              onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION'
+            }
+          }
+        }
+      }
+    ]
   ],
 
   sitemap: {
@@ -52,5 +72,12 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
+
+  // Loading bar
+  loading: {
+    color: '#7d48ee',
+    continuous: true,
+    duration: 3000
+  }
 }

@@ -2,28 +2,31 @@
   <div>
     <NuxtLink
       v-if="anchor"
+      :event="disabled ? '' : 'click'"
       :to="to"
       :class="[
         {
           'bg-purple-600': !variant,
           'text-white': !variant,
-          'duration-150': !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
-          'hover:bg-purple-700': !variant,
-          'focus:bg-purple-700': !variant,
+          'hover:bg-purple-700': !variant && !disabled,
+          'focus:bg-purple-700': !variant && !disabled,
           'font-semibold': !variant,
 
           'font-medium': variant,
           'text-purple-600': variant,
-          'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
-          'duration-150': variant
+          'hover:text-purple-400': variant && !disabled,
+          'focus:text-purple-400': variant && !disabled,
+
+          'cursor-default': defaultCursor
         },
         'align-middle',
         'focus:outline-none',
-        'text-2xl'
+        'text-2xl',
+        'duration-150',
+        'transition'
       ]"
       @click="$emit('click')"
     >
@@ -32,27 +35,31 @@
     <button
       v-else
       :type="type"
+      :disabled="disabled"
       :class="[
         {
           'bg-purple-600': !variant,
           'text-white': !variant,
-          'duration-150': !variant,
+          transition: !variant,
           'py-2': !variant,
           'px-5': !variant,
           'rounded-xl': !variant,
-          'hover:bg-purple-700': !variant,
-          'focus:bg-purple-700': !variant,
+          'hover:bg-purple-700': !variant && !disabled,
+          'focus:bg-purple-700': !variant && !disabled,
           'font-semibold': !variant,
 
           'font-medium': variant,
           'text-purple-600': variant,
-          'hover:text-purple-400': variant,
-          'focus:text-purple-400': variant,
-          'duration-150': variant
+          'hover:text-purple-400': variant && !disabled,
+          'focus:text-purple-400': variant && !disabled,
+
+          'cursor-default': defaultCursor
         },
         'align-middle',
         'focus:outline-none',
-        'text-2xl'
+        'text-2xl',
+        'duration-150',
+        'transition'
       ]"
       @click="$emit('click')"
     >
@@ -79,6 +86,18 @@ export default {
       default: null
     },
     variant: {
+      type: Boolean,
+      default: false
+    },
+    large: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    defaultCursor: {
       type: Boolean,
       default: false
     }

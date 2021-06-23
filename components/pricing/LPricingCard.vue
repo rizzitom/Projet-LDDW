@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow h-auto rounded-2xl">
+  <div class="shadow h-auto rounded-xl">
     <div class="p-8 h-auto">
       <h2 class="text-4xl font-medium">
         {{ name }}

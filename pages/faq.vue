@@ -80,6 +80,7 @@
 import LExpand from '../components/common/LExpand.vue'
 export default {
   components: { LExpand },
+  layout: 'main',
 
   head () {
     return {

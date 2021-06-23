@@ -6,7 +6,7 @@
       class="col-start-2 sm:col-start-2 col-span-6 sm:col-span-3 font-bold flex items-center"
     >
       <NuxtLink to="/">
-        Le design du web
+        <img src="logo.svg" alt="logo du studio" class="h-10">
       </NuxtLink>
     </div>
 
@@ -25,11 +25,17 @@
     <div
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
-      <l-button class="ml-5 hidden sm:block" anchor to="#">
+      <l-button
+        v-if="!$store.state.currentUser"
+        class="ml-5 hidden sm:block"
+        anchor
+        to="login"
+      >
         Se connecter
       </l-button>
-      <l-button class="sm:hidden flex">
-        <span class="material-icons flex">
+      <l-user-menu v-else class="hidden sm:block" />
+      <l-button class="sm:hidden" variant>
+        <span class="material-icons">
           menu
         </span>
       </l-button>
@@ -39,9 +45,10 @@
 
 <script>
 import LButton from '../common/LButton.vue'
+import LUserMenu from './LUserMenu.vue'
 
 export default {
   name: 'MainHeader',
-  components: { LButton }
+  components: { LButton, LUserMenu }
 }
 </script>

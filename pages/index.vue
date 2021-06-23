@@ -13,6 +13,7 @@ import StrenghtsSection from '../components/landing/sections/StrenghtsSection.vu
 
 export default {
   components: { FirstSection, StrenghtsSection, StepsSection },
+  layout: 'main',
 
   head () {
     return {

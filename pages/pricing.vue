@@ -59,6 +59,7 @@ import LPricingCard from '../components/pricing/LPricingCard.vue'
 
 export default {
   components: { LPricingCard },
+  layout: 'main',
 
   head () {
     return {
