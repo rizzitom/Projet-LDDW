@@ -64,7 +64,13 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - Formules et tarifs'
+      title: 'Le design du web - Formules et tarifs',
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ]
     }
   }
 }
