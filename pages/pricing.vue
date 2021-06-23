@@ -1,6 +1,6 @@
 <template>
   <div class="py-36 grid grid-cols-12">
-    <div class="col-span-10 col-start-2 lg:col-start-4 lg:col-span-6 grid grid-cols-2 gap-x-12 gap-y-24 md:gap-y-32 items-center">
+    <div class="col-span-10 col-start-2 lg:col-start-4 lg:col-span-6 2xl:col-start-5 2xl:col-span-4 grid grid-cols-2 gap-x-12 gap-y-24 md:gap-y-32 items-center">
       <div class="text-center col-span-2">
         <h1 class="text-6xl font-semibold mb-4">
           Nos formules et tarifs
