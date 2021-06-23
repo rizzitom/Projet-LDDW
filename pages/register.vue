@@ -2,7 +2,9 @@
   <div class="h-screen flex flex-col">
     <div class="grid grid-cols-12 mt-6 mb-12 sm:mb-6 h-36 sm:h-20 items-center">
       <div class="col-start-2 col-end-12 sm:col-end-5">
-        LOGO HERE
+        <NuxtLink to="/">
+          <img src="logo.svg" alt="logo du studio" class="h-10">
+        </NuxtLink>
       </div>
       <span
         class="col-start-2 col-end-12 sm:col-start-5 sm:col-end-12 sm:text-right"
