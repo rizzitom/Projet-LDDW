@@ -113,7 +113,8 @@ export default {
         password: '',
         repeatPassword: ''
       },
-      error: ''
+      error: '',
+      loading: false
     }
   },
 
@@ -139,32 +140,40 @@ export default {
 
   methods: {
     checkCredentials () {
+      this.resetError()
+      this.loading = true
       this.$nuxt.$loading.start()
+
       setTimeout(() => {
-        this.resetError()
-        this.loading = true
         const newUser = this.$v.newUser
         if (!newUser.username.required) {
           this.error = "Veuillez entrer un nom d'utilisateur"
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.username.minLength) {
           this.error = `Le nom d'utilisateur doit contenir au moins ${this.$v.newUser.username.$params.minLength.min} caractères`
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.email.required) {
           this.error = 'Veuillez saisir votre email'
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.email.email) {
           this.error = 'Veuillez saisir un email valide'
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.password.required) {
           this.error = 'Veuillez saisir votre mot de passe'
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.password.minLength) {
           this.error = `Le mot de passe doit contenir au moins ${this.$v.newUser.password.$params.minLength.min} caractères`
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else if (!newUser.repeatPassword.sameAsPassword) {
           this.error = 'Les mots de passe ne correspondent pas'
           this.$nuxt.$loading.finish()
+          this.resetLoading()
         } else {
           this.register()
         }
@@ -194,6 +203,10 @@ export default {
 
     resetError () {
       this.error = ''
+    },
+
+    resetLoading () {
+      this.loading = false
     }
   },
 

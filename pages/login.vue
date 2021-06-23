@@ -44,7 +44,14 @@
             </div>
 
             <div :class="{ 'bg-yellow-200': error, 'rounded-xl': error }">
-              <l-button type="submit" class="grid" large>
+              <l-button
+                type="submit"
+                class="grid"
+                large
+                :disabled="loading"
+                :default-cursor="loading"
+                :class="{ 'opacity-80': loading }"
+              >
                 Se connecter
               </l-button>
               <p v-if="error" class="py-3 px-4 text-xl text-center">
@@ -55,6 +62,8 @@
           <l-button
             type="submit"
             variant
+            :disabled="loading"
+            :default-cursor="loading"
             class="w-full text-center"
             anchor
             to="/"
@@ -80,7 +89,8 @@ export default {
     return {
       email: '',
       password: '',
-      error: ''
+      error: '',
+      loading: false
     }
   },
 
@@ -96,14 +106,17 @@ export default {
 
   methods: {
     checkCredentials () {
+      this.loading = true
       this.$nuxt.$loading.start()
       setTimeout(() => {
         this.resetError()
         this.loading = true
         if (!this.$v.email.email || !this.$v.email.required) {
+          this.resetLoading()
           this.$nuxt.$loading.finish()
           this.error = 'Entrez un email valide'
         } else if (!this.$v.password.required) {
+          this.resetLoading()
           this.$nuxt.$loading.finish()
           this.error = 'Entrez votre mot de passe'
         } else {
@@ -119,12 +132,18 @@ export default {
           this.$router.push('/')
         })
         .catch(() => {
+          this.$nuxt.$loading.finish()
+          this.resetLoading()
           this.error = 'Connexion échouée: vérifiez vos identifiants'
         })
     },
 
     resetError () {
       this.error = ''
+    },
+
+    resetLoading () {
+      this.loading = false
     }
   },
 
