@@ -44,7 +44,7 @@
           Un doute, une question ?
         </h3>
         <p>
-          <NuxtLink class="underline inline-block" to="contact">
+          <NuxtLink class="underline inline-block" to="#">
             Contactez nous
           </NuxtLink>
           pour avoir des informations supplémentaires sur la tarification
