@@ -212,7 +212,13 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - Créer un compte'
+      title: 'Le design du web - Créer un compte',
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ]
     }
   }
 }

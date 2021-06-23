@@ -149,7 +149,13 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - Accéder à son compte'
+      title: 'Le design du web - Accéder à son compte',
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ]
     }
   }
 }
