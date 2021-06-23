@@ -6,7 +6,7 @@
       class="col-start-2 sm:col-start-2 col-span-6 sm:col-span-3 font-bold flex items-center"
     >
       <NuxtLink to="/">
-        Le design du web
+        <img src="logo.svg" alt="logo du studio" class="h-10">
       </NuxtLink>
     </div>
 
