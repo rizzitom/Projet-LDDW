@@ -15,7 +15,7 @@
         class="col-span-2 sm:col-span-1"
         name="Standard"
         :price="40"
-        subheading="par jour"
+        subheading="par journée de 8 heures"
         :features="[
           '5 révisions gratuites',
           'Support disponible 7j/7',
