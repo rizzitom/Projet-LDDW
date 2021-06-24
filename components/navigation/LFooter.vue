@@ -55,7 +55,10 @@
           <NuxtLink to="register" class="hover:underline w-max">
             Créer un compte
           </NuxtLink>
-          <NuxtLink to="#" class="hover:underline w-max">
+          <NuxtLink
+            :to="`/${$store.state.currentUser.displayName}?tab=settings`"
+            class="hover:underline w-max"
+          >
             Paramètres
           </NuxtLink>
         </div>
