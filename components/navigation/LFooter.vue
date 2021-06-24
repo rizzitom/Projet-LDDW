@@ -47,7 +47,11 @@
 
         <div class="mt-5 font-light text-2xl grid gap-y-2">
           <NuxtLink
-            :to="`/${$store.state.currentUser.displayName}?tab=orders`"
+            :to="
+              $store.state.currentUser
+                ? `/${$store.state.currentUser.displayName}?tab=orders`
+                : '/login'
+            "
             class="hover:underline w-max"
           >
             Mes commandes
@@ -56,7 +60,11 @@
             Créer un compte
           </NuxtLink>
           <NuxtLink
-            :to="`/${$store.state.currentUser.displayName}?tab=settings`"
+            :to="
+              $store.state.currentUser
+                ? `/${$store.state.currentUser.displayName}?tab=settings`
+                : '/login'
+            "
             class="hover:underline w-max"
           >
             Paramètres
