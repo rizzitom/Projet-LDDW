@@ -24,12 +24,13 @@
         class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-t-none rounded-b-none border-b-0 pb-4"
       >
         <template #title>
-          Comment est-ce que règle ma commande ?
+          Comment est-ce que je règle ma commande ?
         </template>
         <template #description>
-          Lors du règlement de votre commande, vous devez utiliser Paypal. Nous
-          travaillons à l'intégration de services comme Stripe pour continuer à
-          automatiser notre processus.
+          Depuis votre espace client, cliquez sur l'onglet "Commandes" pour
+          accéder au détail. Sur cette page, vous pourrez accéder au paiement
+          intégré avec Stripe et générer une facture après validation du
+          paiement. Nous ne conservons aucune donnée bancaire.
         </template>
       </l-expand>
 
