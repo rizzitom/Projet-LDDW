@@ -12,13 +12,11 @@
           'px-5': !variant,
           'rounded-xl': !variant,
           'hover:bg-purple-700': !variant && !disabled,
-          'focus:bg-purple-700': !variant && !disabled,
           'font-semibold': !variant,
 
           'font-medium': variant,
           'text-purple-600': variant,
           'hover:text-purple-400': variant && !disabled,
-          'focus:text-purple-400': variant && !disabled,
 
           'cursor-default': defaultCursor
         },
@@ -45,13 +43,11 @@
           'px-5': !variant,
           'rounded-xl': !variant,
           'hover:bg-purple-700': !variant && !disabled,
-          'focus:bg-purple-700': !variant && !disabled,
           'font-semibold': !variant,
 
           'font-medium': variant,
           'text-purple-600': variant,
           'hover:text-purple-400': variant && !disabled,
-          'focus:text-purple-400': variant && !disabled,
 
           'cursor-default': defaultCursor
         },
