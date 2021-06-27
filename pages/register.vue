@@ -91,7 +91,13 @@
 </template>
 
 <script>
-import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
+import {
+  required,
+  email,
+  minLength,
+  maxLength,
+  sameAs
+} from 'vuelidate/lib/validators'
 import LButton from '../components/common/LButton.vue'
 import LAnchor from '../components/common/LAnchor.vue'
 import LInput from '../components/common/LInput.vue'
@@ -117,7 +123,8 @@ export default {
     newUser: {
       username: {
         required,
-        minLength: minLength(5)
+        minLength: minLength(5),
+        maxLength: maxLength(10)
       },
       email: {
         required,
@@ -145,8 +152,8 @@ export default {
           this.error = "Veuillez entrer un nom d'utilisateur"
           this.$nuxt.$loading.finish()
           this.resetLoading()
-        } else if (!newUser.username.minLength) {
-          this.error = `Le nom d'utilisateur doit contenir au moins ${this.$v.newUser.username.$params.minLength.min} caractères`
+        } else if (!newUser.username.minLength || !newUser.username.maxLength) {
+          this.error = `Le nom d'utilisateur doit contenir entre ${this.$v.newUser.username.$params.minLength.min} et ${this.$v.newUser.username.$params.maxLength.max} caractères`
           this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.email.required) {
