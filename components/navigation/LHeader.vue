@@ -25,14 +25,12 @@
     <div
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
-      <l-anchor
-        v-if="$store && !$store.state.currentUser"
-        class="ml-5 hidden sm:block"
-        to="/login"
-      >
+      <l-user-menu v-if="$store.state.currentUser" class="hidden sm:block" />
+
+      <l-anchor v-else class="ml-5 hidden sm:block" to="/login">
         Se connecter
       </l-anchor>
-      <l-user-menu v-else class="hidden sm:block" />
+
       <l-button class="sm:hidden flex" variant>
         <span class="material-icons">
           menu
