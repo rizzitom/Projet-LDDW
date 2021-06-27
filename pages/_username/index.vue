@@ -2,11 +2,8 @@
   <div class="grid grid-cols-12 py-36 min-h-screen">
     <div class="col-start-4 col-span-6 rounded-xl flex">
       <div class="mr-12 pr-6 w-72">
-        <!-- <div v-if="$store.state.currentUser" class="mb-12 font-medium text-3xl">
+        <div v-if="$store.state.currentUser" class="mb-12 font-medium text-3xl">
           {{ $store.state.currentUser.displayName }}
-        </div> -->
-        <div class="mb-12 font-medium text-3xl">
-          brdtheo
         </div>
 
         <div class="text-2xl grid gap-y-3 auto-rows-min">
