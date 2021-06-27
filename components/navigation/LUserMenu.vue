@@ -17,26 +17,26 @@
       class="right-0 top-100 absolute w-72 rounded-xl overflow-hidden bg-white border"
       :class="{ hidden: !menu }"
     >
-      <ul class="py-3 text-2xl">
+      <div class="py-3 text-2xl">
         <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
           :to="`/${$store.state.currentUser.displayName}?tab=orders`"
         >
-          <li>Mon compte</li>
+          Mon compte
         </NuxtLink>
         <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
           :to="`/${$store.state.currentUser.displayName}?tab=settings`"
         >
-          <li>Paramètres</li>
+          Paramètres
         </NuxtLink>
-        <li
+        <div
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer transition-colors duration-75"
           @click="logout"
         >
           Se déconnecter
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
