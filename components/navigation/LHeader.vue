@@ -11,30 +11,29 @@
     </div>
 
     <div class="hidden md:flex col-span-4 justify-center items-center">
-      <l-button class="mx-5" variant anchor to="faq">
+      <l-anchor class="mx-5" variant to="/faq">
         FAQ
-      </l-button>
-      <l-button class="mx-5" variant anchor to="pricing">
+      </l-anchor>
+      <l-anchor class="mx-5" variant to="/pricing">
         Tarifs
-      </l-button>
-      <l-button class="mx-5" variant>
+      </l-anchor>
+      <l-anchor class="mx-5" variant to="#">
         Contact
-      </l-button>
+      </l-anchor>
     </div>
 
     <div
       class="col-start-10 sm:col-start-9 col-end-12 items-center justify-end flex"
     >
-      <l-button
+      <l-anchor
         v-if="$store && !$store.state.currentUser"
         class="ml-5 hidden sm:block"
-        anchor
-        to="login"
+        to="/login"
       >
         Se connecter
-      </l-button>
+      </l-anchor>
       <l-user-menu v-else class="hidden sm:block" />
-      <l-button class="sm:hidden" variant>
+      <l-button class="sm:hidden flex" variant>
         <span class="material-icons">
           menu
         </span>
@@ -45,10 +44,11 @@
 
 <script>
 import LButton from '../common/LButton.vue'
+import LAnchor from '../common/LAnchor.vue'
 import LUserMenu from './LUserMenu.vue'
 
 export default {
   name: 'MainHeader',
-  components: { LButton, LUserMenu }
+  components: { LButton, LAnchor, LUserMenu }
 }
 </script>

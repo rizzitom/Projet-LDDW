@@ -10,9 +10,9 @@
         class="col-start-2 col-end-12 sm:col-start-5 sm:col-end-12 sm:text-right"
       >
         Vous n'avez pas de compte?
-        <l-button variant anchor to="register" class="inline ml-1">
+        <l-anchor variant to="register" class="inline ml-1">
           S'enregistrer
-        </l-button>
+        </l-anchor>
       </span>
     </div>
     <div class="flex flex-1 justify-center items-center py-8">
@@ -46,10 +46,8 @@
             <div :class="{ 'bg-yellow-200': error, 'rounded-xl': error }">
               <l-button
                 type="submit"
-                class="grid"
-                large
+                class="w-full"
                 :disabled="loading"
-                :default-cursor="loading"
                 :class="{ 'opacity-80': loading }"
               >
                 Se connecter
@@ -59,17 +57,16 @@
               </p>
             </div>
           </form>
-          <l-button
+          <l-anchor
             type="submit"
             variant
             :disabled="loading"
             :default-cursor="loading"
             class="w-full text-center"
-            anchor
             to="/"
           >
             Annuler et retourner à l'accueil
-          </l-button>
+          </l-anchor>
         </div>
       </div>
     </div>
@@ -78,11 +75,12 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
+import LAnchor from '../components/common/LAnchor.vue'
 import LButton from '../components/common/LButton.vue'
 import LInput from '../components/common/LInput.vue'
 
 export default {
-  components: { LButton, LInput },
+  components: { LAnchor, LButton, LInput },
   layout: 'default',
 
   data () {
