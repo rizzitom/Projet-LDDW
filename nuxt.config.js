@@ -67,8 +67,7 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://ledesignduweb.fr',
-    generate: true
+    hostname: 'https://ledesignduweb.fr'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
