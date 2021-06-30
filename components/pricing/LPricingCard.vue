@@ -9,7 +9,7 @@
         <div class="text-7xl font-light block">
           {{ price }}<span class="text-3xl">€</span>
         </div>
-        <span>{{ subheading }}</span>
+        <span class="text-center">{{ subheading }}</span>
       </div>
 
       <div class="my-12">

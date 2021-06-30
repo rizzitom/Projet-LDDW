@@ -1,6 +1,8 @@
 <template>
   <div class="py-36 grid grid-cols-12">
-    <div class="col-span-10 col-start-2 lg:col-start-4 lg:col-span-6 2xl:col-start-5 2xl:col-span-4 grid grid-cols-2 gap-x-12 gap-y-24 md:gap-y-32 items-center">
+    <div
+      class="col-span-10 col-start-2 lg:col-start-4 lg:col-span-6 2xl:col-start-5 2xl:col-span-4 grid grid-cols-2 gap-x-12 gap-y-24 md:gap-y-32 items-center"
+    >
       <div class="text-center col-span-2">
         <h1 class="text-6xl font-semibold mb-4">
           Nos formules et tarifs
@@ -14,9 +16,10 @@
       <l-pricing-card
         class="col-span-2 sm:col-span-1"
         name="Standard"
-        :price="40"
-        subheading="par journée de 8 heures"
+        :price="3.75"
+        subheading="de l'heure soit 30€ la journée (8h)"
         :features="[
+          'Possibilité de paiement en 2 fois',
           '5 révisions gratuites',
           'Support disponible 7j/7',
           'Suivi de commande en temps réel',
@@ -27,8 +30,8 @@
       <l-pricing-card
         class="col-span-2 sm:col-span-1"
         name="Flexible"
-        :price="7"
-        subheading="par heure"
+        :price="5"
+        subheading="de l'heure"
         :features="[
           '5 révisions gratuites',
           'Support disponible 7j/7',
