@@ -45,14 +45,14 @@
 
       <div class="flex-1 flex">
         <div v-if="$route.query.tab == 'orders'" class="w-full">
-          commandes
+          <orders-list />
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
           factures
         </div>
         <div v-if="$route.query.tab == 'settings'" class="w-full">
           <ul class="flex flex-col">
-            <li class="flex">
+            <li class="flex border-b pb-4">
               <span>
                 M'envoyer un email lors de l'avancement de status de ma commande
               </span>
@@ -67,10 +67,11 @@
 
 <script>
 import LAnchor from '../../components/common/LAnchor.vue'
+import OrdersList from '../../components/panel/OrdersList.vue'
 
 export default {
   layout: 'MainLayout',
-  components: { LAnchor },
+  components: { LAnchor, OrdersList },
 
   data () {
     return {
