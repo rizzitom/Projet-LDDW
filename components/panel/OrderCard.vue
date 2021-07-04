@@ -14,7 +14,7 @@
     <hr class="mb-4">
 
     <div class="text-xl flex justify-between items-center">
-      <order-step :step="order.step" />
+      <order-step :step="order.step" :canceled="order.canceled" />
       <span>{{ returnDate }}</span>
     </div>
   </div>
