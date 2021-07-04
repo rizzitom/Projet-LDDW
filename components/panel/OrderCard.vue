@@ -1,5 +1,8 @@
 <template>
-  <div class="p-6 rounded-xl shadow-sm border cursor-pointer">
+  <div
+    class="p-6 rounded-xl shadow-sm border cursor-pointer"
+    @click="showOrderDetails = true"
+  >
     <div class="flex justify-between items-center">
       <h2 class="font-medium text-2xl flex flex-1">
         {{ order.subject }}
@@ -17,22 +20,31 @@
       <order-step :step="order.step" :canceled="order.canceled" />
       <span>{{ returnDate }}</span>
     </div>
+
+    <order-details v-if="showOrderDetails" @close="showOrderDetails = false" />
   </div>
 </template>
 
 <script>
 import moment from 'moment'
 import OrderStep from './OrderStep.vue'
+import OrderDetails from './OrderDetails.vue'
 
 export default {
   name: 'OrderCard',
 
-  components: { OrderStep },
+  components: { OrderStep, OrderDetails },
 
   props: {
     order: {
       type: Object,
       required: true
+    }
+  },
+
+  data () {
+    return {
+      showOrderDetails: false
     }
   },
 
