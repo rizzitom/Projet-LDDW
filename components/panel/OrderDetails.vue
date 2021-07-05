@@ -47,7 +47,9 @@
         >
           <template #title>
             <div class="flex items-center">
-              <span class="text-2xl">Paiement</span>
+              <span class="text-2xl">
+                Paiement <span v-if="order.price">({{ order.price }}€)</span>
+              </span>
               <span
                 v-if="order.step > 2"
                 class="material-icons icon ml-3 text-green-500"

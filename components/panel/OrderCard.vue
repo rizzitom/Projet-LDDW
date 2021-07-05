@@ -6,11 +6,11 @@
     }"
     @click="order.canceled ? false : openOrderDetails()"
   >
-    <div class="flex justify-between items-center">
-      <h2 class="font-medium text-2xl flex flex-1">
+    <div class="flex justify-between items-center font-medium">
+      <h2 class="text-2xl flex flex-1">
         {{ order.subject }}
       </h2>
-      <span class="text-xl">#{{ order.id }}</span>
+      <span v-if="order.price" class="text-xl">{{ order.price }}€</span>
     </div>
 
     <p class="text-2xl my-6 leading-relaxed">
