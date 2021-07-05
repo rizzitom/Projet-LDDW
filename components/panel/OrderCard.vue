@@ -1,7 +1,10 @@
 <template>
   <div
-    class="p-6 rounded-xl shadow-sm border cursor-pointer"
-    @click="showOrderDetails = true"
+    class="p-6 rounded-xl shadow-sm border"
+    :class="{
+      'cursor-pointer': !order.canceled
+    }"
+    @click="order.canceled ? false : openOrderDetails()"
   >
     <div class="flex justify-between items-center">
       <h2 class="font-medium text-2xl flex flex-1">
@@ -21,7 +24,11 @@
       <span>{{ returnDate }}</span>
     </div>
 
-    <order-details v-if="showOrderDetails" @close="showOrderDetails = false" />
+    <order-details
+      v-if="showOrderDetails"
+      :order="order"
+      @close="showOrderDetails = false"
+    />
   </div>
 </template>
 
@@ -51,6 +58,12 @@ export default {
   computed: {
     returnDate () {
       return moment(this.order.date).format('l')
+    }
+  },
+
+  methods: {
+    openOrderDetails () {
+      this.showOrderDetails = true
     }
   }
 }
