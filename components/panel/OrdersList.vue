@@ -40,7 +40,8 @@ export default {
           message:
             "J'ai besoin d'un blog avec une partie boutique. C'est un projet personnel et il me le faut au plus vite. Je n'ai pas de design. Est-ce que vous pouvez vous en occuper ?",
           step: 2,
-          availableRevisions: 0
+          availableRevisions: 0,
+          price: 129.99
         },
         {
           id: '7jt8adYT4Rh',
@@ -50,7 +51,8 @@ export default {
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
           step: 3,
-          availableRevisions: 2
+          availableRevisions: 2,
+          price: 129.99
         },
         {
           id: '7jt8adYT4Rh',
@@ -60,7 +62,8 @@ export default {
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
           step: 4,
-          availableRevisions: 4
+          availableRevisions: 4,
+          price: 129.99
         },
         {
           id: '7jt8adYT4Rh',
@@ -70,7 +73,8 @@ export default {
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
           step: 5,
-          availableRevisions: 3
+          availableRevisions: 3,
+          price: 129.99
         },
         {
           id: '7jt8adYT4Rh',
@@ -80,7 +84,8 @@ export default {
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
           canceled: true,
-          availableRevisions: 5
+          availableRevisions: 5,
+          price: 129.99
         }
       ]
     }
