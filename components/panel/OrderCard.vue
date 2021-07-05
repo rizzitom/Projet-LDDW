@@ -27,7 +27,7 @@
     <order-details
       v-if="showOrderDetails"
       :order="order"
-      @close="showOrderDetails = false"
+      @close="closeOrderDetails()"
     />
   </div>
 </template>
@@ -64,6 +64,10 @@ export default {
   methods: {
     openOrderDetails () {
       this.showOrderDetails = true
+    },
+
+    closeOrderDetails () {
+      this.showOrderDetails = false
     }
   }
 }
