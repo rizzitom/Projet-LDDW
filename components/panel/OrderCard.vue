@@ -54,7 +54,7 @@ export default {
 
   computed: {
     returnDate () {
-      return moment(this.order.date).format('l')
+      return moment(this.order.date.toDate()).format('l')
     }
   },
 
