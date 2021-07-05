@@ -56,7 +56,7 @@
 
       <div class="flex-1 flex">
         <div v-if="$route.query.tab == 'orders'" class="w-full">
-          <orders-list />
+          <orders-list :orders="orders" />
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
           factures
@@ -93,6 +93,19 @@ export default {
       orders: [],
       invoices: []
     }
+  },
+
+  created () {
+    this.$fire.firestore
+      .collection('orders')
+      .where('userId', '==', this.$store.state.currentUser.uid)
+      .orderBy('date', 'desc')
+      .onSnapshot((querySnapshot) => {
+        this.orders = []
+        querySnapshot.forEach((doc) => {
+          this.orders.push(doc.data())
+        })
+      })
   },
 
   head () {
