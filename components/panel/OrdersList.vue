@@ -29,7 +29,8 @@ export default {
           subject: 'Création de blog et site vitrine',
           message:
             "Bonjour il me faut un site avec plusieurs sections (accueil, infos, blog, notre team). J'aimerais que ce projet soit fait en deux mois maximum, est-ce que vous pouvez vous en charger ?",
-          step: 1
+          step: 1,
+          availableRevisions: 1
         },
         {
           id: '2ajf4378Fjz',
@@ -38,7 +39,8 @@ export default {
           subject: 'site avec boutique',
           message:
             "J'ai besoin d'un blog avec une partie boutique. C'est un projet personnel et il me le faut au plus vite. Je n'ai pas de design. Est-ce que vous pouvez vous en occuper ?",
-          step: 2
+          step: 2,
+          availableRevisions: 0
         },
         {
           id: '7jt8adYT4Rh',
@@ -47,7 +49,8 @@ export default {
           subject: 'refonte application web',
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
-          step: 3
+          step: 3,
+          availableRevisions: 2
         },
         {
           id: '7jt8adYT4Rh',
@@ -56,7 +59,8 @@ export default {
           subject: 'refonte application web',
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
-          step: 4
+          step: 4,
+          availableRevisions: 4
         },
         {
           id: '7jt8adYT4Rh',
@@ -65,7 +69,8 @@ export default {
           subject: 'refonte application web',
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
-          step: 5
+          step: 5,
+          availableRevisions: 3
         },
         {
           id: '7jt8adYT4Rh',
@@ -74,7 +79,8 @@ export default {
           subject: 'refonte application web',
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
-          canceled: true
+          canceled: true,
+          availableRevisions: 5
         }
       ]
     }
