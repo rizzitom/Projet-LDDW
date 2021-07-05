@@ -84,8 +84,9 @@ export default {
           message:
             "Bonjour nous recherchons une équipe de développeurs pour se charger de refaire la partie front de notre application. Nous avons une partie back avec une manipulation d'APIs. Merci de nous répondre rapidement",
           canceled: true,
-          availableRevisions: 5,
-          price: 129.99
+          cancelationReason:
+            "Nous avons décidé de refuser votre projet par manque d'expérience sur le sujet.",
+          availableRevisions: 5
         }
       ]
     }
