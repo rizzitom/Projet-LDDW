@@ -16,7 +16,28 @@
         </l-button>
       </div>
 
-      <div class="overflow-y-scroll">
+      <div v-if="order.canceled" class="overflow-y-scroll">
+        <l-expand class="p-6 rounded-none border-t-0 border-b-0">
+          <template #title>
+            <div class="flex items-center">
+              <span class="text-2xl">Annulation</span>
+            </div>
+          </template>
+          <template #description>
+            Après étude, notre équipe a décidé de refuser votre proposition. Si
+            un motif est renseigné, il sera mentionné ci-dessous.<br>
+
+            <div
+              v-if="order.cancelationReason"
+              class="bg-red-50 mt-4 text-xl p-4 rounded-xl leading-relaxed"
+            >
+              {{ order.cancelationReason }}
+            </div>
+          </template>
+        </l-expand>
+      </div>
+
+      <div v-else class="overflow-y-scroll">
         <l-expand
           class="p-6 rounded-b-none border-t-0"
           :class="{ 'opacity-60': order.step > 1 }"
