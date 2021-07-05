@@ -1,10 +1,7 @@
 <template>
   <div
-    class="p-6 rounded-xl shadow-sm border"
-    :class="{
-      'cursor-pointer': !order.canceled
-    }"
-    @click="order.canceled ? false : openOrderDetails()"
+    class="p-6 rounded-xl shadow-sm border cursor-pointer"
+    @click="openOrderDetails()"
   >
     <div class="flex justify-between items-center font-medium">
       <h2 class="text-2xl flex flex-1">
