@@ -6,7 +6,7 @@
           {{ $store.state.currentUser.displayName }}
         </div>
 
-        <div class="text-2xl grid gap-y-3 auto-rows-min">
+        <div class="text-2xl grid gap-y-3 auto-rows-min select-none">
           <l-anchor
             variant
             to="?tab=orders"
@@ -31,6 +31,17 @@
           </l-anchor>
           <l-anchor
             variant
+            to="?tab=chat"
+            class="ml-4 px-4 py-3 rounded-xl flex items-center"
+            :class="[$route.query.tab == 'chat' ? activeTab : '']"
+          >
+            <span class="material-icons icon">
+              chat_bubble
+            </span>
+            Chat
+          </l-anchor>
+          <l-anchor
+            variant
             to="?tab=settings"
             class="ml-4 px-4 py-3 rounded-xl flex items-center"
             :class="[$route.query.tab == 'settings' ? activeTab : '']"
@@ -49,6 +60,9 @@
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
           factures
+        </div>
+        <div v-if="$route.query.tab == 'chat'" class="w-full">
+          chat
         </div>
         <div v-if="$route.query.tab == 'settings'" class="w-full">
           <ul class="flex flex-col">
