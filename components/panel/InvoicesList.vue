@@ -1,7 +1,7 @@
 <template>
   <table class="w-full h-full">
     <thead>
-      <tr class="grid grid-cols-7 text-left">
+      <tr class="grid grid-cols-7 text-left mb-6">
         <th class="col-span-2 font-medium">
           Montant
         </th>
@@ -17,16 +17,19 @@
       <tr
         v-for="(invoice, i) in invoices"
         :key="i"
-        class="grid grid-cols-7 text-left border-b my-4 py-2 text-xl"
+        class="grid grid-cols-7 text-left border-b py-4 text-xl"
       >
-        <td class="col-span-2">
-          {{ invoice.amount }}
+        <td class="col-span-2 flex items-center pr-8">
+          {{ `${invoice.amount / 100} ${invoice.currency.toUpperCase()}` }}
         </td>
-        <td class="col-span-3">
+        <td class="col-span-3 flex items-center pr-8">
           {{ invoice.description }}
         </td>
-        <td class="col-span-2">
-          {{ invoice.url }}
+        <td class="col-span-2 flex items-center">
+          <span class="material-icons link-icon"> link </span>
+          <a :href="invoice.url" target="_blank" class="underline ml-3">
+            Lien externe
+          </a>
         </td>
       </tr>
     </tbody>
@@ -63,6 +66,18 @@ export default {
         }
       ]
     }
+  },
+
+  methods: {
+    returnPrice (price) {
+      return price * 2
+    }
   }
 }
 </script>
+
+<style scoped>
+.link-icon {
+  font-size: 16px;
+}
+</style>
