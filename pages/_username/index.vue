@@ -59,7 +59,7 @@
           <orders-list :orders="orders" />
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
-          factures
+          <invoices-list />
         </div>
         <div v-if="$route.query.tab == 'chat'" class="w-full">
           chat
@@ -81,11 +81,12 @@
 
 <script>
 import LAnchor from '../../components/common/LAnchor.vue'
+import InvoicesList from '../../components/panel/InvoicesList.vue'
 import OrdersList from '../../components/panel/OrdersList.vue'
 
 export default {
   layout: 'MainLayout',
-  components: { LAnchor, OrdersList },
+  components: { LAnchor, OrdersList, InvoicesList },
 
   data () {
     return {
