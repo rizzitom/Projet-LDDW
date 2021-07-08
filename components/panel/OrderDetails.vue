@@ -70,7 +70,7 @@
             <div class="flex items-center">
               <span class="text-2xl">
                 Paiement
-                <span v-if="order.price">
+                <span v-if="invoice && invoice.items[0]">
                   ({{
                     `${invoice.items[0].amount /
                       100} ${invoice.items[0].currency.toUpperCase()}`
