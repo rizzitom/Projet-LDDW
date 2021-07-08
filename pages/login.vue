@@ -10,7 +10,7 @@
         class="col-start-2 col-end-12 sm:col-start-5 sm:col-end-12 sm:text-right"
       >
         Vous n'avez pas de compte?
-        <l-anchor variant to="register" class="inline ml-1">
+        <l-anchor variant to="/register" class="inline ml-1">
           S'enregistrer
         </l-anchor>
       </span>

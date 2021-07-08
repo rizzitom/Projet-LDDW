@@ -56,7 +56,7 @@
           >
             Mes commandes
           </NuxtLink>
-          <NuxtLink to="register" class="hover:underline w-max">
+          <NuxtLink to="/register" class="hover:underline w-max">
             Créer un compte
           </NuxtLink>
           <!-- <NuxtLink
