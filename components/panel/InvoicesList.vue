@@ -3,7 +3,7 @@
     class="w-full h-full"
     :class="{ 'flex justify-center items-center': invoices.length == 0 }"
   >
-    <table v-if="invoices.length > 0">
+    <table v-if="invoices.length > 0" class="w-full">
       <thead>
         <tr class="grid grid-cols-7 text-left mb-6">
           <th class="col-span-2 font-medium">
