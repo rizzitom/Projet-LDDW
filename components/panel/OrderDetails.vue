@@ -69,7 +69,13 @@
           <template #title>
             <div class="flex items-center">
               <span class="text-2xl">
-                Paiement <span v-if="order.price">({{ order.price }}€)</span>
+                Paiement
+                <span v-if="order.price">
+                  ({{
+                    `${invoice.items[0].amount /
+                      100} ${invoice.items[0].currency.toUpperCase()}`
+                  }})
+                </span>
               </span>
               <span
                 v-if="order.step > 2"
@@ -149,6 +155,10 @@ export default {
     order: {
       type: Object,
       required: true
+    },
+    invoice: {
+      type: Object,
+      default: null
     }
   }
 }

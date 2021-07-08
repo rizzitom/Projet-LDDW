@@ -7,7 +7,12 @@
       <h2 class="text-2xl flex flex-1">
         {{ order.subject }}
       </h2>
-      <span v-if="order.price" class="text-xl">{{ order.price }}€</span>
+      <span v-if="invoice" class="text-xl">
+        {{
+          `${invoice.items[0].amount /
+            100} ${invoice.items[0].currency.toUpperCase()}`
+        }}
+      </span>
     </div>
 
     <p class="text-2xl my-6 leading-relaxed">
@@ -24,6 +29,7 @@
     <order-details
       v-if="showOrderDetails"
       :order="order"
+      :invoice="invoice"
       @close="closeOrderDetails()"
     />
   </div>
@@ -43,6 +49,10 @@ export default {
     order: {
       type: Object,
       required: true
+    },
+    invoice: {
+      type: Object,
+      default: null
     }
   },
 
