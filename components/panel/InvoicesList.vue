@@ -46,7 +46,7 @@
       </tbody>
     </table>
 
-    <l-empty v-else title="Aucune facture à afficher" />
+    <l-empty v-else title="Aucune facture" />
   </div>
 </template>
 
