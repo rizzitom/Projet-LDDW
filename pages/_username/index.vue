@@ -59,7 +59,7 @@
           <orders-list :orders="orders" />
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
-          <invoices-list />
+          <invoices-list :invoices="invoices" />
         </div>
         <div v-if="$route.query.tab == 'chat'" class="w-full">
           chat
@@ -105,6 +105,16 @@ export default {
         this.orders = []
         querySnapshot.forEach((doc) => {
           this.orders.push(doc.data())
+        })
+      })
+
+    this.$fire.firestore
+      .collection('invoices')
+      .where('email', '==', this.$store.state.currentUser.email)
+      .onSnapshot((querySnapshot) => {
+        this.invoices = []
+        querySnapshot.forEach((doc) => {
+          this.invoices.push(doc.data())
         })
       })
   },
