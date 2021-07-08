@@ -69,9 +69,6 @@
           >
             Paramètres
           </NuxtLink> -->
-          <NuxtLink to="#" class="hover:underline w-max">
-            Paramètres
-          </NuxtLink>
         </div>
       </div>
     </div>

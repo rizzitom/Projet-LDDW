@@ -29,12 +29,6 @@
         >
           Paramètres
         </NuxtLink> -->
-        <NuxtLink
-          class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
-          to="#"
-        >
-          Paramètres
-        </NuxtLink>
         <div
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer transition-colors duration-75"
           @click="logout"
