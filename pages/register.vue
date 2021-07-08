@@ -10,9 +10,9 @@
         class="col-start-2 col-end-12 sm:col-start-5 sm:col-end-12 sm:text-right"
       >
         Vous avez déjà un compte?
-        <l-button variant anchor to="login" class="inline ml-1">
+        <l-anchor variant to="/login" class="inline ml-1">
           Se connecter
-        </l-button>
+        </l-anchor>
       </span>
     </div>
     <div class="flex flex-1 justify-center items-center py-8">
@@ -73,7 +73,7 @@
             </div>
 
             <div :class="{ 'bg-yellow-200': error, 'rounded-xl': error }">
-              <l-button type="submit" class="grid" large>
+              <l-button type="submit" class="w-full">
                 S'enregistrer
               </l-button>
               <p v-if="error" class="py-3 px-4 text-xl text-center">
@@ -81,15 +81,9 @@
               </p>
             </div>
           </form>
-          <l-button
-            type="submit"
-            variant
-            class="w-full text-center"
-            anchor
-            to="/"
-          >
+          <l-anchor type="submit" variant class="w-full text-center" to="/">
             Annuler et retourner à l'accueil
-          </l-button>
+          </l-anchor>
         </div>
       </div>
     </div>
@@ -97,12 +91,19 @@
 </template>
 
 <script>
-import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
+import {
+  required,
+  email,
+  minLength,
+  maxLength,
+  sameAs
+} from 'vuelidate/lib/validators'
 import LButton from '../components/common/LButton.vue'
+import LAnchor from '../components/common/LAnchor.vue'
 import LInput from '../components/common/LInput.vue'
 
 export default {
-  components: { LButton, LInput },
+  components: { LButton, LAnchor, LInput },
   layout: 'default',
 
   data () {
@@ -122,7 +123,8 @@ export default {
     newUser: {
       username: {
         required,
-        minLength: minLength(5)
+        minLength: minLength(5),
+        maxLength: maxLength(10)
       },
       email: {
         required,
@@ -150,8 +152,8 @@ export default {
           this.error = "Veuillez entrer un nom d'utilisateur"
           this.$nuxt.$loading.finish()
           this.resetLoading()
-        } else if (!newUser.username.minLength) {
-          this.error = `Le nom d'utilisateur doit contenir au moins ${this.$v.newUser.username.$params.minLength.min} caractères`
+        } else if (!newUser.username.minLength || !newUser.username.maxLength) {
+          this.error = `Le nom d'utilisateur doit contenir entre ${this.$v.newUser.username.$params.minLength.min} et ${this.$v.newUser.username.$params.maxLength.max} caractères`
           this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.email.required) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-gray-100 p-12 rounded-xl">
+  <div class="border border-gray-100 rounded-xl">
     <div
       class="flex justify-between cursor-pointer"
       @click="expanded = !expanded"

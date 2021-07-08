@@ -1,7 +1,7 @@
 <template>
   <div class="relative text-gray-700 h-3/4">
     <div
-      v-if="$store && $store.state.currentUser"
+      v-if="$store.state.currentUser"
       class="flex items-center select-none cursor-pointer h-full hover:text-gray-400 duration-150"
       @click="toggleMenu"
     >
@@ -12,29 +12,30 @@
     </div>
 
     <div
+      v-if="$store.state.currentUser"
       class="right-0 top-100 absolute w-72 rounded-xl overflow-hidden bg-white border"
       :class="{ hidden: !menu }"
     >
-      <ul class="py-3 text-2xl">
+      <div class="py-3 text-2xl">
         <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
-          to="#"
+          :to="`/${$store.state.currentUser.displayName}?tab=orders`"
         >
-          <li>Mon compte</li>
+          Mon compte
         </NuxtLink>
-        <NuxtLink
+        <!-- <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
-          to="#"
+          :to="`/${$store.state.currentUser.displayName}?tab=settings`"
         >
-          <li>Paramètres</li>
-        </NuxtLink>
-        <li
+          Paramètres
+        </NuxtLink> -->
+        <div
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer transition-colors duration-75"
           @click="logout"
         >
           Se déconnecter
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -46,6 +47,12 @@ export default {
   data () {
     return {
       menu: false
+    }
+  },
+
+  watch: {
+    $route () {
+      this.menu = false
     }
   },
 

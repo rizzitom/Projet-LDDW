@@ -17,6 +17,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.6.5",
     "firebase": "^8.6.8",
+    "moment": "^2.29.1",
     "nuxt": "^2.14.6",
     "nuxt-mq": "^2.0.2",
     "vue-material-design-icons": "^4.11.0",

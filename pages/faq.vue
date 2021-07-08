@@ -8,7 +8,7 @@
 
     <div class="grid grid-cols-12">
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-xl rounded-b-none border-b-0 pb-4"
+        class="p-12 col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-xl rounded-b-none border-b-0 pb-4"
       >
         <template #title>
           Comment suivre l'avancement de ma commande ?
@@ -21,7 +21,7 @@
       </l-expand>
 
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-t-none rounded-b-none border-b-0 pb-4"
+        class="p-12 col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-t-none rounded-b-none border-b-0 pb-4"
       >
         <template #title>
           Comment est-ce que je règle ma commande ?
@@ -35,7 +35,7 @@
       </l-expand>
 
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-b-none rounded-t-none border-b-0 pb-4"
+        class="p-12 col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white border-t-0 rounded-b-none rounded-t-none border-b-0 pb-4"
       >
         <template #title>
           Proposez-vous des services dans le webdesign ?
@@ -47,7 +47,7 @@
       </l-expand>
 
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-none rounded-b-xl border-t-0"
+        class="p-12 col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white rounded-t-none rounded-b-xl border-t-0"
       >
         <template #title>
           Quels types de site réalisez vous ?
@@ -60,7 +60,7 @@
       </l-expand>
 
       <l-expand
-        class="col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white mt-12"
+        class="p-12 col-span-10 lg:col-span-6 col-start-2 lg:col-start-4 bg-white mt-12"
       >
         <template #title>
           Ma question n'est pas listée
@@ -81,7 +81,7 @@
 import LExpand from '../components/common/LExpand.vue'
 export default {
   components: { LExpand },
-  layout: 'main',
+  layout: 'MainLayout',
 
   head () {
     return {

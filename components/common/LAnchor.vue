@@ -1,13 +1,13 @@
 <template>
-  <button
+  <NuxtLink
+    v-slot="{ navigate }"
+    custom
     :event="disabled ? '' : 'click'"
-    :type="type"
-    :disabled="disabled"
+    :to="to"
     :class="[
       {
         'bg-purple-600': !variant,
         'text-white': !variant,
-        transition: !variant,
         'py-2': !variant,
         'px-5': !variant,
         'rounded-xl': !variant,
@@ -22,32 +22,31 @@
       'focus:outline-none',
       'text-2xl',
       'duration-150',
-      'transition'
+      'transition',
+      'cursor-pointer'
     ]"
     @click="$emit('click')"
   >
-    <slot />
-  </button>
+    <span @click="navigate" @keypress.enter="navigate">
+      <slot />
+    </span>
+  </NuxtLink>
 </template>
 
 <script>
 export default {
-  name: 'LButton',
+  name: 'LAnchor',
 
   props: {
-    type: {
+    to: {
       type: String,
-      default: 'button'
+      default: '#'
     },
     variant: {
       type: Boolean,
       default: false
     },
     disabled: {
-      type: Boolean,
-      default: false
-    },
-    fullWidth: {
       type: Boolean,
       default: false
     }
