@@ -56,7 +56,7 @@
 
       <div class="flex-1 flex">
         <div v-if="$route.query.tab == 'orders'" class="w-full">
-          <orders-list :orders="orders" />
+          <orders-list :orders="orders" :invoices="invoices" />
         </div>
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
           <invoices-list :invoices="invoices" />
@@ -104,7 +104,7 @@ export default {
       .onSnapshot((querySnapshot) => {
         this.orders = []
         querySnapshot.forEach((doc) => {
-          this.orders.push(doc.data())
+          this.orders.push({ ...doc.data(), id: doc.id })
         })
       })
 
@@ -114,7 +114,7 @@ export default {
       .onSnapshot((querySnapshot) => {
         this.invoices = []
         querySnapshot.forEach((doc) => {
-          this.invoices.push(doc.data())
+          this.invoices.push({ ...doc.data(), id: doc.id })
         })
       })
   },
