@@ -29,7 +29,7 @@
             </span>
             Factures
           </l-anchor>
-          <l-anchor
+          <!-- <l-anchor
             variant
             to="?tab=chat"
             class="ml-4 px-4 py-3 rounded-xl flex items-center"
@@ -50,7 +50,7 @@
               settings
             </span>
             Paramètres
-          </l-anchor>
+          </l-anchor> -->
         </div>
       </div>
 
@@ -61,7 +61,7 @@
         <div v-if="$route.query.tab == 'invoices'" class="w-full">
           <invoices-list :invoices="invoices" />
         </div>
-        <div v-if="$route.query.tab == 'chat'" class="w-full">
+        <!-- <div v-if="$route.query.tab == 'chat'" class="w-full">
           chat
         </div>
         <div v-if="$route.query.tab == 'settings'" class="w-full">
@@ -73,7 +73,7 @@
               <span class="ml-12">toggle</span>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
