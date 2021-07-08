@@ -1,16 +1,20 @@
 <template>
-  <div class="grid grid-cols-12 py-36 min-h-screen">
-    <div class="col-start-4 col-span-6 rounded-xl flex">
-      <div class="mr-12 pr-6 w-72">
+  <div class="grid grid-cols-12 py-20 md:py-36 min-h-screen">
+    <div
+      class="col-start-2 col-span-10 sm:col-start-3 sm:col-span-8 xl:col-start-4 xl:col-span-6 2xl:col-start-5 2xl:col-span-4 rounded-xl flex flex-col md:flex-row"
+    >
+      <div class="md:mr-12 md:pr-6 w-full md:w-72 mb-16 md:mb-0">
         <div v-if="$store.state.currentUser" class="mb-12 font-medium text-3xl">
           {{ $store.state.currentUser.displayName }}
         </div>
 
-        <div class="text-2xl grid gap-y-3 auto-rows-min select-none">
+        <div
+          class="text-2xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-y-3 auto-rows-min select-none"
+        >
           <l-anchor
             variant
             to="?tab=orders"
-            class="ml-4 px-4 py-3 rounded-xl flex items-center"
+            class="md:ml-4 px-4 py-3 rounded-xl flex items-center"
             :class="[$route.query.tab == 'orders' ? activeTab : '']"
           >
             <span class="material-icons icon">
@@ -21,7 +25,7 @@
           <l-anchor
             variant
             to="?tab=invoices"
-            class="ml-4 px-4 py-3 rounded-xl flex items-center"
+            class="md:ml-4 px-4 py-3 rounded-xl flex items-center"
             :class="[$route.query.tab == 'invoices' ? activeTab : '']"
           >
             <span class="material-icons icon">

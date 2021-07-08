@@ -4,14 +4,14 @@
     @click="$emit('close')"
   >
     <div
-      class="bg-white rounded-xl col-start-5 col-span-4 max-h-full overflow-y-scroll"
+      class="bg-white rounded-xl col-start-1 col-span-12 sm:col-start-3 sm:col-span-8 lg:col-start-5 lg:col-span-4 2xl:col-start-6 2xl:col-span-3 max-h-full overflow-y-scroll"
       @click.stop=""
     >
       <div
         class="py-4 px-6 flex justify-between items-center bg-purple-600 text-white rounded-t-xl"
       >
         <span class="text-2xl flex flex-1">{{ order.subject }}</span>
-        <l-button variant class="ml-24" @click="$emit('close')">
+        <l-button variant class="ml-12 md:ml-24" @click="$emit('close')">
           <span class="text-white">Fermer</span>
         </l-button>
       </div>

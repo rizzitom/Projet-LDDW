@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-full"
+    class="w-full h-full overflow-x-scroll md:overflow-auto"
     :class="{ 'flex justify-center items-center': invoices.length == 0 }"
   >
-    <table v-if="invoices.length > 0" class="w-full">
+    <table v-if="invoices.length > 0" class="w-full min-w-max md:min-w-0">
       <thead>
         <tr class="grid grid-cols-7 text-left mb-6">
           <th class="col-span-2 font-medium">
