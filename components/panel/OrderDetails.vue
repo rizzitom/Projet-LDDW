@@ -37,7 +37,7 @@
         </l-expand>
       </div>
 
-      <div v-else class="overflow-y-scroll">
+      <div v-else>
         <l-expand
           class="p-6 rounded-b-none border-t-0"
           :class="{ 'opacity-60': order.step > 1 }"
