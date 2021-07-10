@@ -13,15 +13,19 @@
         </h3>
 
         <div class="mt-5 font-light text-2xl grid gap-y-2">
-          <NuxtLink to="#" class="hover:underline w-max">
+          <a
+            href="https://discord.gg/8UmMrusK7f"
+            class="hover:underline w-max"
+            target="_blank"
+          >
             Discord
-          </NuxtLink>
-          <NuxtLink to="#" class="hover:underline w-max">
+          </a>
+          <!-- <NuxtLink to="#" class="hover:underline w-max">
             Twitter
           </NuxtLink>
           <NuxtLink to="#" class="hover:underline w-max">
             Instagram
-          </NuxtLink>
+          </NuxtLink> -->
         </div>
       </div>
 
@@ -55,6 +59,16 @@
             class="hover:underline w-max"
           >
             Mes commandes
+          </NuxtLink>
+          <NuxtLink
+            :to="
+              $store.state.currentUser
+                ? `/${$store.state.currentUser.displayName}?tab=invoices`
+                : '/login'
+            "
+            class="hover:underline w-max"
+          >
+            Mes factures
           </NuxtLink>
           <NuxtLink to="/register" class="hover:underline w-max">
             Créer un compte
