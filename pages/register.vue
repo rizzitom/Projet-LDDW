@@ -81,7 +81,7 @@
               </p>
             </div>
           </form>
-          <l-anchor type="submit" variant class="w-full text-center" to="/">
+          <l-anchor variant class="w-full text-center" to="/">
             Annuler et retourner à l'accueil
           </l-anchor>
         </div>

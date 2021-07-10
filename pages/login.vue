@@ -58,7 +58,6 @@
             </div>
           </form>
           <l-anchor
-            type="submit"
             variant
             :disabled="loading"
             :default-cursor="loading"
