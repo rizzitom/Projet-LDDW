@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 *, *::before, *::after {
   box-sizing: inherit;
   margin: 0;
@@ -16,4 +15,16 @@ body {
   padding: 0;
   font-size: 1.6rem;
   font-family: 'Inter', Helvetica, Arial;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
