@@ -28,7 +28,7 @@
         </ul>
       </div>
 
-      <l-button class="grid grid-cols-1">
+      <l-button class="w-full">
         Sélectionner
       </l-button>
     </div>
