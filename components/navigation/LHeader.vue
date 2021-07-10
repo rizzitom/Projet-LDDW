@@ -31,12 +31,14 @@
         Se connecter
       </l-anchor>
 
-      <l-button class="sm:hidden flex" variant>
+      <l-button class="sm:hidden flex" variant @click="sidebar = true">
         <span class="material-icons">
           menu
         </span>
       </l-button>
     </div>
+
+    <l-sidebar v-if="sidebar" @close="sidebar = false" />
   </header>
 </template>
 
@@ -44,9 +46,16 @@
 import LButton from '../common/LButton.vue'
 import LAnchor from '../common/LAnchor.vue'
 import LUserMenu from './LUserMenu.vue'
+import LSidebar from './LSidebar.vue'
 
 export default {
   name: 'MainHeader',
-  components: { LButton, LAnchor, LUserMenu }
+  components: { LButton, LAnchor, LUserMenu, LSidebar },
+
+  data () {
+    return {
+      sidebar: false
+    }
+  }
 }
 </script>
