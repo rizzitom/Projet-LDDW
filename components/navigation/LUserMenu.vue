@@ -19,13 +19,13 @@
       <div class="py-3 text-2xl">
         <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
-          :to="`/${$store.state.currentUser.displayName}?tab=orders`"
+          to="/account?tab=orders"
         >
           Mon compte
         </NuxtLink>
         <!-- <NuxtLink
           class="py-2 px-5 hover:bg-purple-700 hover:text-white cursor-pointer flex transition-colors duration-75"
-          :to="`/${$store.state.currentUser.displayName}?tab=settings`"
+          to="/account?tab=settings"
         >
           Paramètres
         </NuxtLink> -->
