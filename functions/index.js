@@ -4,8 +4,9 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
 
-exports.updateStripInvoice = functions.firestore
-  .document("invoices/{stripeInvoiceId}")
+exports.paidStripeInvoice = functions
+  .region("europe-west3")
+  .firestore.document("invoices/{stripeInvoiceId}")
   .onUpdate((change) => {
     const updatedInvoice = change.after.data();
 
@@ -16,7 +17,7 @@ exports.updateStripInvoice = functions.firestore
       // update order step when the order is paid
       /* console.log("order paid, updating order step..."); */
       const orderId = updatedInvoice.orderId;
-      return db.doc(`orders/${orderId}`).set({
+      return db.doc(`orders/${orderId}`).update({
         step: 3,
       });
       /* .then(() => {
