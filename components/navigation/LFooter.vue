@@ -51,21 +51,13 @@
 
         <div class="mt-5 font-light text-2xl grid gap-y-2">
           <NuxtLink
-            :to="
-              $store.state.currentUser
-                ? `/${$store.state.currentUser.displayName}?tab=orders`
-                : '/login'
-            "
+            :to="$store.state.currentUser ? '/account?tab=orders' : '/login'"
             class="hover:underline w-max"
           >
             Mes commandes
           </NuxtLink>
           <NuxtLink
-            :to="
-              $store.state.currentUser
-                ? `/${$store.state.currentUser.displayName}?tab=invoices`
-                : '/login'
-            "
+            :to="$store.state.currentUser ? '/account?tab=invoices' : '/login'"
             class="hover:underline w-max"
           >
             Mes factures
@@ -76,7 +68,7 @@
           <!-- <NuxtLink
             :to="
               $store.state.currentUser
-                ? `/${$store.state.currentUser.displayName}?tab=settings`
+                ? `/account?tab=settings`
                 : '/login'
             "
             class="hover:underline w-max"

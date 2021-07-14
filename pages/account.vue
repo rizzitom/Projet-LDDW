@@ -84,9 +84,9 @@
 </template>
 
 <script>
-import LAnchor from '../../components/common/LAnchor.vue'
-import InvoicesList from '../../components/panel/InvoicesList.vue'
-import OrdersList from '../../components/panel/OrdersList.vue'
+import LAnchor from '../components/common/LAnchor.vue'
+import InvoicesList from '../components/panel/InvoicesList.vue'
+import OrdersList from '../components/panel/OrdersList.vue'
 
 export default {
   layout: 'MainLayout',
@@ -125,7 +125,7 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - ' + this.$route.params.username
+      title: 'Le design du web - ' + this.$store.state.currentUser.displayName
     }
   }
 }

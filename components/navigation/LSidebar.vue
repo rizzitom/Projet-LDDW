@@ -27,7 +27,7 @@
         <l-anchor
           class="py-4 border-b flex items-center justify-between"
           variant
-          :to="`/${$store.state.currentUser.displayName}?tab=orders`"
+          to="/account?tab=orders"
         >
           Commandes
           <span class="material-icons">
@@ -37,7 +37,7 @@
         <l-anchor
           class="py-4 border-b flex items-center justify-between"
           variant
-          :to="`/${$store.state.currentUser.displayName}?tab=invoices`"
+          to="/account?tab=invoices"
         >
           Factures
           <span class="material-icons">
