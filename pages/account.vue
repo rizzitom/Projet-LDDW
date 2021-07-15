@@ -23,6 +23,7 @@
             Commandes
           </l-anchor>
           <l-anchor
+            v-if="!isAdmin"
             variant
             to="?tab=invoices"
             class="md:ml-4 px-4 py-3 rounded-xl flex items-center"
@@ -87,10 +88,12 @@
 import LAnchor from '../components/common/LAnchor.vue'
 import InvoicesList from '../components/panel/InvoicesList.vue'
 import OrdersList from '../components/panel/OrdersList.vue'
+import global from '../mixins/global'
 
 export default {
   layout: 'MainLayout',
   components: { LAnchor, OrdersList, InvoicesList },
+  mixins: [global],
 
   data () {
     return {
@@ -101,26 +104,47 @@ export default {
   },
 
   created () {
-    this.$fire.firestore
-      .collection('orders')
-      .where('userId', '==', this.$store.state.currentUser.uid)
-      .orderBy('date', 'desc')
-      .onSnapshot((querySnapshot) => {
-        this.orders = []
-        querySnapshot.forEach((doc) => {
-          this.orders.push({ ...doc.data(), id: doc.id })
+    if (this.isAdmin) {
+      this.$fire.firestore
+        .collection('orders')
+        .orderBy('date', 'desc')
+        .onSnapshot((querySnapshot) => {
+          this.orders = []
+          querySnapshot.forEach((doc) => {
+            this.orders.push({ ...doc.data(), id: doc.id })
+          })
         })
-      })
+    } else {
+      this.$fire.firestore
+        .collection('orders')
+        .where('userId', '==', this.$store.state.currentUser.uid)
+        .orderBy('date', 'desc')
+        .onSnapshot((querySnapshot) => {
+          this.orders = []
+          querySnapshot.forEach((doc) => {
+            this.orders.push({ ...doc.data(), id: doc.id })
+          })
+        })
+    }
 
-    this.$fire.firestore
-      .collection('invoices')
-      .where('email', '==', this.$store.state.currentUser.email)
-      .onSnapshot((querySnapshot) => {
+    if (this.isAdmin) {
+      this.$fire.firestore.collection('invoices').onSnapshot((querySnapshot) => {
         this.invoices = []
         querySnapshot.forEach((doc) => {
           this.invoices.push({ ...doc.data(), id: doc.id })
         })
       })
+    } else {
+      this.$fire.firestore
+        .collection('invoices')
+        .where('email', '==', this.$store.state.currentUser.email)
+        .onSnapshot((querySnapshot) => {
+          this.invoices = []
+          querySnapshot.forEach((doc) => {
+            this.invoices.push({ ...doc.data(), id: doc.id })
+          })
+        })
+    }
   },
 
   head () {

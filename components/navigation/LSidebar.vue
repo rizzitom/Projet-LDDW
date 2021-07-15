@@ -35,6 +35,7 @@
           </span>
         </l-anchor>
         <l-anchor
+          v-if="!isAdmin"
           class="py-4 border-b flex items-center justify-between"
           variant
           to="/account?tab=invoices"
@@ -82,10 +83,12 @@
 <script>
 import LAnchor from '../common/LAnchor.vue'
 import LButton from '../common/LButton.vue'
+import global from '../../mixins/global'
 
 export default {
   name: 'LSidebar',
   components: { LAnchor, LButton },
+  mixins: [global],
 
   methods: {
     logout () {
