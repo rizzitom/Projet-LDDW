@@ -52,9 +52,42 @@
         </div>
       </l-dialog>
 
-      <l-button v-if="!order.canceled" small class="mr-4">
+      <l-button
+        v-if="!order.canceled"
+        small
+        class="mr-4"
+        @click.stop="openCancelDialog()"
+      >
         Annuler la commande
       </l-button>
+      <l-dialog
+        v-if="showCancelDialog"
+        title="Annuler la commande"
+        @close.stop="closeCancelDialog()"
+      >
+        <form class="p-6 flex flex-col" @submit.stop.prevent="cancelOrder()">
+          <div class="w-full flex flex-col">
+            <label for="cancel-order" class="mb-2">
+              Motif
+            </label>
+            <l-text-area
+              id="cancel-order"
+              v-model="cancelationReason"
+              required
+            />
+          </div>
+          <div class="mt-5 flex justify-end">
+            <l-button
+              class="flex items-center"
+              type="submit"
+              :loading="loading"
+              :disabled="loading"
+            >
+              Annuler la commande
+            </l-button>
+          </div>
+        </form>
+      </l-dialog>
 
       <l-button small class="mr-4">
         Joindre un fichier
@@ -76,12 +109,13 @@ import global from '../../mixins/global'
 import LButton from '../common/LButton.vue'
 import LDialog from '../common/LDialog.vue'
 import LInput from '../common/LInput.vue'
+import LTextArea from '../common/LTextArea.vue'
 import OrderStep from './OrderStep.vue'
 import OrderDetails from './OrderDetails.vue'
 
 export default {
   name: 'OrderCard',
-  components: { OrderStep, OrderDetails, LButton, LDialog, LInput },
+  components: { OrderStep, OrderDetails, LButton, LDialog, LInput, LTextArea },
   mixins: [global],
 
   props: {
@@ -100,7 +134,9 @@ export default {
       loading: false,
       showOrderDetails: false,
       showStepDialog: false,
-      orderStep: null
+      showCancelDialog: false,
+      orderStep: null,
+      cancelationReason: ''
     }
   },
 
@@ -140,7 +176,6 @@ export default {
     closeStepDialog () {
       this.showStepDialog = false
     },
-
     setNewOrderStep () {
       this.setLoadingState(true)
       const newStep = parseInt(this.orderStep)
@@ -151,6 +186,27 @@ export default {
           .doc(this.order.id)
           .update({
             step: newStep
+          })
+          .then(this.setLoadingState(false))
+      }, 250)
+    },
+
+    openCancelDialog () {
+      this.showCancelDialog = true
+    },
+    closeCancelDialog () {
+      this.showCancelDialog = false
+    },
+    cancelOrder () {
+      this.setLoadingState(true)
+
+      setTimeout(() => {
+        this.$fire.firestore
+          .collection('orders')
+          .doc(this.order.id)
+          .update({
+            canceled: true,
+            cancelationReason: this.cancelationReason
           })
           .then(this.setLoadingState(false))
       }, 250)
