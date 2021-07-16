@@ -8,23 +8,27 @@
         'bg-purple-600': !variant,
         'text-white': !variant,
         transition: !variant,
-        'py-2': !variant,
-        'px-5': !variant,
+        'py-2': !variant && !small,
+        'px-5': !variant && !small,
         'rounded-xl': !variant,
         'hover:bg-purple-700': !variant && !disabled,
-        'font-semibold': !variant,
+        'font-semibold': !variant && !small,
 
-        'font-medium': variant,
+        'font-medium': variant || small,
         'text-purple-600': variant,
-        'hover:text-purple-400': variant && !disabled
+        'hover:text-purple-400': variant && !disabled,
+
+        'text-2xl': !small,
+        'text-xl': small,
+        'py-1.5': small,
+        'px-4': small
       },
       'align-middle',
       'focus:outline-none',
-      'text-2xl',
       'duration-150',
       'transition'
     ]"
-    @click="$emit('click')"
+    @click="handleClick"
   >
     <slot />
   </button>
@@ -50,6 +54,16 @@ export default {
     fullWidth: {
       type: Boolean,
       default: false
+    },
+    small: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
     }
   }
 }
