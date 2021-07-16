@@ -28,8 +28,8 @@
 
     <hr v-if="isAdmin" class="mt-4">
 
-    <div v-if="isAdmin" class="pt-4 flex">
-      <l-button small class="mr-4" @click.stop="openStepDialog()">
+    <div v-if="isAdmin" class="pt-4 flex flex-col sm:flex-row">
+      <l-button small class="sm:mr-4 mb-4 sm:mb-0" @click.stop="openStepDialog()">
         Changer d'étape
       </l-button>
       <l-dialog
@@ -55,7 +55,7 @@
       <l-button
         v-if="!order.canceled"
         small
-        class="mr-4"
+        class="sm:mr-4 mb-4 sm:mb-0"
         @click.stop="openCancelDialog()"
       >
         Annuler la commande
@@ -89,7 +89,7 @@
         </form>
       </l-dialog>
 
-      <l-button small class="mr-4">
+      <l-button small>
         Joindre un fichier
       </l-button>
     </div>
