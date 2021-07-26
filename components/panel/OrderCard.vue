@@ -57,7 +57,7 @@
       </l-dialog>
 
       <l-button
-        v-if="!order.canceled"
+        v-if="order.step < 5 && !order.canceled"
         small
         class="sm:mr-4 mb-4 sm:mb-0"
         @click.stop="openCancelDialog()"
