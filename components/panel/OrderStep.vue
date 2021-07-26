@@ -7,7 +7,12 @@
       'bg-red-600': canceled
     }"
   >
-    <span v-if="step == 1 && !canceled" class="material-icons step-icon"> schedule </span>
+    <span v-if="canceled" class="material-icons step-icon"> close </span>
+    <span v-if="canceled">Projet annulé</span>
+
+    <span v-else-if="step == 1" class="material-icons step-icon">
+      schedule
+    </span>
     <span v-else-if="step == 2" class="material-icons step-icon">
       attach_money
     </span>
@@ -18,10 +23,8 @@
       schedule
     </span>
     <span v-else-if="step == 5" class="material-icons step-icon"> done </span>
-    <span v-else class="material-icons step-icon"> close </span>
 
-    <span v-if="!canceled" class="ml-1">{{ returnStep }}</span>
-    <span v-else>Projet annulé</span>
+    <span class="ml-1">{{ returnStep }}</span>
   </div>
 </template>
 
