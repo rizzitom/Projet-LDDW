@@ -262,12 +262,14 @@ export default {
 
       setTimeout(() => {
         this.$fire.firestore
-          .collection('invoices')
-          .insert({
-            email: true,
+          .collection('orders')
+          .doc(this.order.id)
+          .update({
+            canceled: true,
             cancelationReason: this.cancelationReason
           })
           .then(this.setLoadingState(false))
+          .then(this.closeCancelDialog())
       }, 250)
     },
 
