@@ -151,7 +151,7 @@
       </l-button>
       <l-dialog
         v-if="showFileDialog"
-        title="Envoyer la facture"
+        title="Joindre un fichier"
         @close.stop="closeFileDialog()"
       >
         <form
