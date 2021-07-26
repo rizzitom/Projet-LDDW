@@ -1,7 +1,12 @@
 export default {
   computed: {
     isAdmin () {
-      return this.$store.state.currentUser.email === 'bonjour@ledesignduweb.fr'
+      const currentUser = this.$store.state.currentUser
+      if (currentUser && currentUser.email === 'bonjour@ledesignduweb.fr') {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
