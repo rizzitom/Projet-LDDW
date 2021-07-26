@@ -57,6 +57,7 @@
             Mes commandes
           </NuxtLink>
           <NuxtLink
+            v-if="!isAdmin"
             :to="$store.state.currentUser ? '/account?tab=invoices' : '/login'"
             class="hover:underline w-max"
           >
@@ -82,7 +83,10 @@
 </template>
 
 <script>
+import global from '../../mixins/global'
+
 export default {
-  name: 'LFooter'
+  name: 'LFooter',
+  mixins: [global]
 }
 </script>

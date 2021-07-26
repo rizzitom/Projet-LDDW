@@ -61,7 +61,8 @@ export default {
               onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION'
             }
           },
-          firestore: true
+          firestore: true,
+          storage: true
         }
       }
     ]

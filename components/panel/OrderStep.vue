@@ -4,22 +4,27 @@
     :class="{
       'bg-purple-600': step < 5 && !canceled,
       'bg-green-600': step == 5 && !canceled,
-      'bg-red-600': !step && canceled
+      'bg-red-600': canceled
     }"
   >
-    <span v-if="step == 1" class="material-icons step-icon"> schedule </span>
-    <span v-if="step == 2" class="material-icons step-icon">
-      attach_money
-    </span>
-    <span v-if="step == 3" class="material-icons step-icon">
-      published_with_changes
-    </span>
-    <span v-if="step == 4" class="material-icons step-icon"> schedule </span>
-    <span v-if="step == 5" class="material-icons step-icon"> done </span>
-    <span v-if="!canceled" class="ml-1">{{ returnStep }}</span>
-
     <span v-if="canceled" class="material-icons step-icon"> close </span>
     <span v-if="canceled">Projet annulé</span>
+
+    <span v-else-if="step == 1" class="material-icons step-icon">
+      schedule
+    </span>
+    <span v-else-if="step == 2" class="material-icons step-icon">
+      attach_money
+    </span>
+    <span v-else-if="step == 3" class="material-icons step-icon">
+      published_with_changes
+    </span>
+    <span v-else-if="step == 4" class="material-icons step-icon">
+      schedule
+    </span>
+    <span v-else-if="step == 5" class="material-icons step-icon"> done </span>
+
+    <span class="ml-1">{{ returnStep }}</span>
   </div>
 </template>
 

@@ -3,7 +3,10 @@
     <div
       class="col-start-2 col-span-10 sm:col-start-3 sm:col-span-8 xl:col-start-4 xl:col-span-6 2xl:col-start-5 2xl:col-span-4 rounded-xl flex flex-col md:flex-row"
     >
-      <div class="md:mr-12 md:pr-6 w-full md:w-72 mb-16 md:mb-0">
+      <div
+        v-if="!isAdmin"
+        class="md:mr-12 md:pr-6 w-full md:w-72 mb-16 md:mb-0"
+      >
         <div v-if="$store.state.currentUser" class="mb-12 font-medium text-3xl">
           {{ $store.state.currentUser.displayName }}
         </div>
@@ -87,10 +90,12 @@
 import LAnchor from '../components/common/LAnchor.vue'
 import InvoicesList from '../components/panel/InvoicesList.vue'
 import OrdersList from '../components/panel/OrdersList.vue'
+import global from '../mixins/global'
 
 export default {
   layout: 'MainLayout',
   components: { LAnchor, OrdersList, InvoicesList },
+  mixins: [global],
 
   data () {
     return {
@@ -101,31 +106,54 @@ export default {
   },
 
   created () {
-    this.$fire.firestore
-      .collection('orders')
-      .where('userId', '==', this.$store.state.currentUser.uid)
-      .orderBy('date', 'desc')
-      .onSnapshot((querySnapshot) => {
-        this.orders = []
-        querySnapshot.forEach((doc) => {
-          this.orders.push({ ...doc.data(), id: doc.id })
+    if (this.isAdmin) {
+      this.$fire.firestore
+        .collection('orders')
+        .orderBy('date', 'desc')
+        .onSnapshot((querySnapshot) => {
+          this.orders = []
+          querySnapshot.forEach((doc) => {
+            this.orders.push({ ...doc.data(), id: doc.id })
+          })
         })
-      })
+    } else {
+      this.$fire.firestore
+        .collection('orders')
+        .where('email', '==', this.$store.state.currentUser.email)
+        .orderBy('date', 'desc')
+        .onSnapshot((querySnapshot) => {
+          this.orders = []
+          querySnapshot.forEach((doc) => {
+            this.orders.push({ ...doc.data(), id: doc.id })
+          })
+        })
+    }
 
-    this.$fire.firestore
-      .collection('invoices')
-      .where('email', '==', this.$store.state.currentUser.email)
-      .onSnapshot((querySnapshot) => {
+    if (this.isAdmin) {
+      this.$fire.firestore.collection('invoices').onSnapshot((querySnapshot) => {
         this.invoices = []
         querySnapshot.forEach((doc) => {
           this.invoices.push({ ...doc.data(), id: doc.id })
         })
       })
+    } else {
+      this.$fire.firestore
+        .collection('invoices')
+        .where('email', '==', this.$store.state.currentUser.email)
+        .onSnapshot((querySnapshot) => {
+          this.invoices = []
+          querySnapshot.forEach((doc) => {
+            this.invoices.push({ ...doc.data(), id: doc.id })
+          })
+        })
+    }
   },
 
   head () {
-    return {
-      title: 'Le design du web - ' + this.$store.state.currentUser.displayName
+    if (this.$store.state.currentUser) {
+      return {
+        title: 'Le design du web - ' + this.$store.state.currentUser.displayName
+      }
     }
   }
 }
