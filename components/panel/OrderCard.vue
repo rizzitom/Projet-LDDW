@@ -146,9 +146,43 @@
         </form>
       </l-dialog>
 
-      <l-button small>
+      <l-button v-if="order.step != 1" small @click.stop="openFileDialog()">
         Joindre un fichier
       </l-button>
+      <l-dialog
+        v-if="showFileDialog"
+        title="Envoyer la facture"
+        @close.stop="closeFileDialog()"
+      >
+        <form
+          class="p-6 flex flex-col"
+          @submit.stop.prevent="uploadOrderFile()"
+        >
+          <div class="w-full flex flex-col">
+            <div
+              v-if="showSuccessfulUpload && newOrderFile"
+              class="bg-green-600 py-2 px-4 text-lg rounded-xl text-white mb-4"
+            >
+              {{ newOrderFile.name }} transféré avec succès
+            </div>
+
+            <label for="order-file" class="mb-2">
+              Nouveau fichier
+            </label>
+            <l-file-input id="order-file" required @change="setNewOrderFile" />
+          </div>
+          <div class="mt-5 flex justify-end">
+            <l-button
+              class="flex items-center"
+              type="submit"
+              :loading="loading"
+              :disabled="loading"
+            >
+              Envoyer
+            </l-button>
+          </div>
+        </form>
+      </l-dialog>
     </div>
 
     <order-details
@@ -167,12 +201,21 @@ import LButton from '../common/LButton.vue'
 import LDialog from '../common/LDialog.vue'
 import LInput from '../common/LInput.vue'
 import LTextArea from '../common/LTextArea.vue'
+import LFileInput from '../common/LFileInput.vue'
 import OrderStep from './OrderStep.vue'
 import OrderDetails from './OrderDetails.vue'
 
 export default {
   name: 'OrderCard',
-  components: { OrderStep, OrderDetails, LButton, LDialog, LInput, LTextArea },
+  components: {
+    OrderStep,
+    OrderDetails,
+    LButton,
+    LDialog,
+    LInput,
+    LTextArea,
+    LFileInput
+  },
   mixins: [global],
 
   props: {
@@ -196,7 +239,10 @@ export default {
       cancelationReason: '',
       showInvoiceDialog: false,
       invoiceDescription: '',
-      invoiceAmount: null
+      invoiceAmount: null,
+      showFileDialog: false,
+      newOrderFile: null,
+      showSuccessfulUpload: false
     }
   },
 
@@ -299,6 +345,31 @@ export default {
           .then(this.setLoadingState(false))
           .then(this.closeInvoiceDialog())
       }, 250)
+    },
+
+    openFileDialog () {
+      this.showFileDialog = true
+    },
+    closeFileDialog () {
+      this.showFileDialog = false
+    },
+    setNewOrderFile (file) {
+      this.newOrderFile = file
+    },
+    uploadOrderFile () {
+      this.setLoadingState(true)
+
+      const storageRef = this.$fire.storage.ref(
+        `orders/${this.order.id}/${this.newOrderFile.name}`
+      )
+      storageRef.put(this.newOrderFile).then(() => {
+        this.setLoadingState(false)
+        this.showSuccessfulUpload = true
+        setTimeout(() => {
+          this.showSuccessfulUpload = false
+          this.newOrderFile = null
+        }, 4000)
+      })
     }
   }
 }
