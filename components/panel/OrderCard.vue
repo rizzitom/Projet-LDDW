@@ -29,7 +29,11 @@
     <hr v-if="isAdmin" class="mt-4">
 
     <div v-if="isAdmin" class="pt-4 flex flex-col sm:flex-row">
-      <l-button small class="sm:mr-4 mb-4 sm:mb-0" @click.stop="openStepDialog()">
+      <l-button
+        small
+        class="sm:mr-4 mb-4 sm:mb-0"
+        @click.stop="openStepDialog()"
+      >
         Changer d'étape
       </l-button>
       <l-dialog
@@ -89,6 +93,59 @@
         </form>
       </l-dialog>
 
+      <l-button
+        v-if="order.step === 1 && !invoice"
+        small
+        class="sm:mr-4 mb-4 sm:mb-0"
+        @click.stop="openInvoiceDialog()"
+      >
+        Envoyer la facture
+      </l-button>
+      <l-dialog
+        v-if="showInvoiceDialog"
+        title="Envoyer la facture"
+        @close.stop="closeInvoiceDialog()"
+      >
+        <form
+          class="p-6 flex flex-col"
+          @submit.stop.prevent="sendOrderInvoice()"
+        >
+          <div class="w-full flex flex-col">
+            <label for="invoice-amount" class="mb-2">
+              Montant de la facture
+            </label>
+            <l-input
+              id="invoice-amount"
+              v-model="invoiceAmount"
+              type="number"
+              required
+            />
+            <small class="mt-2 text-lg">
+              montant en centimes (10000 = 100.00€)
+            </small>
+
+            <label for="invoice-description" class="mt-8 mb-2">
+              Description de la facture
+            </label>
+            <l-text-area
+              id="invoice-description"
+              v-model="invoiceDescription"
+              required
+            />
+          </div>
+          <div class="mt-5 flex justify-end">
+            <l-button
+              class="flex items-center"
+              type="submit"
+              :loading="loading"
+              :disabled="loading"
+            >
+              Envoyer
+            </l-button>
+          </div>
+        </form>
+      </l-dialog>
+
       <l-button small>
         Joindre un fichier
       </l-button>
@@ -136,7 +193,10 @@ export default {
       showStepDialog: false,
       showCancelDialog: false,
       orderStep: null,
-      cancelationReason: ''
+      cancelationReason: '',
+      showInvoiceDialog: false,
+      invoiceDescription: '',
+      invoiceAmount: null
     }
   },
 
@@ -202,13 +262,40 @@ export default {
 
       setTimeout(() => {
         this.$fire.firestore
-          .collection('orders')
-          .doc(this.order.id)
-          .update({
-            canceled: true,
+          .collection('invoices')
+          .insert({
+            email: true,
             cancelationReason: this.cancelationReason
           })
           .then(this.setLoadingState(false))
+      }, 250)
+    },
+
+    openInvoiceDialog () {
+      this.showInvoiceDialog = true
+    },
+    closeInvoiceDialog () {
+      this.showInvoiceDialog = false
+    },
+    sendOrderInvoice () {
+      this.setLoadingState(true)
+
+      setTimeout(() => {
+        this.$fire.firestore
+          .collection('invoices')
+          .add({
+            email: this.order.email,
+            items: [
+              {
+                amount: parseInt(this.invoiceAmount),
+                currency: 'eur',
+                description: this.invoiceDescription
+              }
+            ],
+            orderId: this.order.id
+          })
+          .then(this.setLoadingState(false))
+          .then(this.closeInvoiceDialog())
       }, 250)
     }
   }
