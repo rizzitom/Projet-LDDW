@@ -119,7 +119,7 @@ export default {
     } else {
       this.$fire.firestore
         .collection('orders')
-        .where('userId', '==', this.$store.state.currentUser.uid)
+        .where('email', '==', this.$store.state.currentUser.email)
         .orderBy('date', 'desc')
         .onSnapshot((querySnapshot) => {
           this.orders = []
@@ -150,8 +150,10 @@ export default {
   },
 
   head () {
-    return {
-      title: 'Le design du web - ' + this.$store.state.currentUser.displayName
+    if (this.$store.state.currentUser) {
+      return {
+        title: 'Le design du web - ' + this.$store.state.currentUser.displayName
+      }
     }
   }
 }
