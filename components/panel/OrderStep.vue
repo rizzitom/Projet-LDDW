@@ -1,36 +1,17 @@
 <template>
-  <div
-    class="rounded-full py-1 px-3 flex items-center text-lg text-white"
-    :class="{
-      'bg-purple-600': step < 5 && !canceled,
-      'bg-green-600': step == 5 && !canceled,
-      'bg-red-600': canceled
-    }"
-  >
-    <span v-if="canceled" class="material-icons step-icon"> close </span>
-    <span v-if="canceled">Projet annulé</span>
-
-    <span v-else-if="step == 1" class="material-icons step-icon">
-      schedule
-    </span>
-    <span v-else-if="step == 2" class="material-icons step-icon">
-      attach_money
-    </span>
-    <span v-else-if="step == 3" class="material-icons step-icon">
-      published_with_changes
-    </span>
-    <span v-else-if="step == 4" class="material-icons step-icon">
-      schedule
-    </span>
-    <span v-else-if="step == 5" class="material-icons step-icon"> done </span>
-
-    <span class="ml-1">{{ returnStep }}</span>
-  </div>
+  <l-chip
+    :title="canceled ? 'Projet annulé' : returnStep"
+    :icon="canceled ? 'close' : returnIcon"
+    :color="returnColor"
+  />
 </template>
 
 <script>
+import LChip from '../common/LChip.vue'
+
 export default {
   name: 'OrderStep',
+  components: { LChip },
 
   props: {
     step: { type: Number, default: null },
@@ -52,6 +33,35 @@ export default {
           return 'Projet livré'
         default:
           return null
+      }
+    },
+
+    returnIcon () {
+      switch (this.step) {
+        case 1:
+          return 'schedule'
+        case 2:
+          return 'attach_money'
+        case 3:
+          return 'published_with_changes'
+        case 4:
+          return 'schedule'
+        case 5:
+          return 'done'
+        default:
+          return null
+      }
+    },
+
+    returnColor () {
+      if (this.step < 5 && !this.canceled) {
+        return 'purple-600'
+      } else if (this.step === 5 && !this.canceled) {
+        return 'green-600'
+      } else if (this.canceled) {
+        return 'red-600'
+      } else {
+        return null
       }
     }
   }
