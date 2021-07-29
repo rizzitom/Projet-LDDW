@@ -21,7 +21,7 @@
 
     <hr class="mb-4">
 
-    <div class="text-xl flex justify-between items-center">
+    <div class="text-xl flex justify-between items-start">
       <div class="flex-1 flex pr-4 flex-wrap">
         <order-step :step="order.step" :canceled="order.canceled" />
 
