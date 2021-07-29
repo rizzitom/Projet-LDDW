@@ -22,7 +22,26 @@
     <hr class="mb-4">
 
     <div class="text-xl flex justify-between items-center">
-      <order-step :step="order.step" :canceled="order.canceled" />
+      <div class="flex-1 flex pr-4 flex-wrap">
+        <order-step :step="order.step" :canceled="order.canceled" />
+
+        <a
+          v-for="(file, i) in orderFiles"
+          :key="i"
+          :href="file.fullPath ? file.fullPath : '#'"
+          target="_blank"
+          class="flex mb-3"
+          @click.stop=""
+        >
+          <l-chip
+            :key="i"
+            class="ml-4"
+            icon="attach_file"
+            :title="file.name"
+            :loading="file.loading"
+          />
+        </a>
+      </div>
       <span>{{ returnDate }}</span>
     </div>
 
@@ -202,6 +221,7 @@ import LDialog from '../common/LDialog.vue'
 import LInput from '../common/LInput.vue'
 import LTextArea from '../common/LTextArea.vue'
 import LFileInput from '../common/LFileInput.vue'
+import LChip from '../common/LChip.vue'
 import OrderStep from './OrderStep.vue'
 import OrderDetails from './OrderDetails.vue'
 
@@ -214,7 +234,8 @@ export default {
     LDialog,
     LInput,
     LTextArea,
-    LFileInput
+    LFileInput,
+    LChip
   },
   mixins: [global],
 
@@ -231,6 +252,8 @@ export default {
 
   data () {
     return {
+      orderFiles: [],
+
       loading: false,
       showOrderDetails: false,
       showStepDialog: false,
@@ -262,6 +285,22 @@ export default {
     if (this.order) {
       this.orderStep = this.order.step
     }
+
+    this.$fire.storage
+      .ref(`orders/${this.order.id}`)
+      .listAll()
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          const itemRefObj = { name: itemRef.name, loading: true }
+          this.orderFiles.push(itemRefObj)
+
+          itemRef.getDownloadURL().then((url) => {
+            const file = this.orderFiles[this.orderFiles.indexOf(itemRefObj)]
+            file.fullPath = url
+            file.loading = false
+          })
+        })
+      })
   },
 
   methods: {
