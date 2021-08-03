@@ -12,6 +12,9 @@ module.exports = {
         'not-found-illustration': "url('/undraw_empty.svg')",
         'server-error-illustration': "url('/undraw_warning.svg')"
       })
+    },
+    boxShadow: {
+      input: '0 0 0 3px rgba(125, 72, 238, 0.4)'
     }
   },
   variants: {
