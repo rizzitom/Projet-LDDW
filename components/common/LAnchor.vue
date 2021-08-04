@@ -39,7 +39,7 @@ export default {
 
   props: {
     to: {
-      type: String,
+      type: [String, Object],
       default: '#'
     },
     variant: {
