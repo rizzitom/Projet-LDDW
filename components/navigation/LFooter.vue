@@ -35,11 +35,14 @@
         </h3>
 
         <div class="mt-5 font-light text-2xl grid gap-y-2">
-          <NuxtLink to="faq" class="hover:underline w-max">
+          <NuxtLink to="/faq" class="hover:underline w-max">
             FAQ
           </NuxtLink>
-          <NuxtLink to="pricing" class="hover:underline w-max">
+          <NuxtLink to="/pricing" class="hover:underline w-max">
             Tarifs
+          </NuxtLink>
+          <NuxtLink to="/contact" class="hover:underline w-max">
+            Contact
           </NuxtLink>
         </div>
       </div>
@@ -66,16 +69,6 @@
           <NuxtLink to="/register" class="hover:underline w-max">
             Créer un compte
           </NuxtLink>
-          <!-- <NuxtLink
-            :to="
-              $store.state.currentUser
-                ? `/account?tab=settings`
-                : '/login'
-            "
-            class="hover:underline w-max"
-          >
-            Paramètres
-          </NuxtLink> -->
         </div>
       </div>
     </div>
