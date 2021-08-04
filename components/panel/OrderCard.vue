@@ -138,6 +138,7 @@
               v-model="invoiceAmount"
               type="number"
               required
+              min="1"
             />
             <small class="mt-2 text-lg">
               montant en centimes (10000 = 100.00€)
