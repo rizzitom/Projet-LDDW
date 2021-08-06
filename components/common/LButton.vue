@@ -21,7 +21,9 @@
         'text-2xl': !small,
         'text-xl': small,
         'py-1.5': small,
-        'px-4': small
+        'px-4': small,
+
+        'opacity-60': disabled
       },
       'align-middle',
       'focus:outline-none',
