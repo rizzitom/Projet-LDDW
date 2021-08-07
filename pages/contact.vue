@@ -8,7 +8,7 @@
     </l-snackbar>
 
     <div
-      class="col-start-2 col-end-12 sm:col-end-9 md:col-end-8 xl:col-end-6 2xl:col-end-4"
+      class="col-start-2 col-end-12 sm:col-end-9 md:col-end-8 xl:col-end-6 2xl:col-end-5"
     >
       <div class="mb-24">
         <h1 class="text-6xl font-semibold">
