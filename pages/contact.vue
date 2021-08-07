@@ -53,6 +53,13 @@
           </button>
         </div>
 
+        <div
+          v-if="notAllowedToOrder"
+          class="bg-yellow-500 text-yellow-100 rounded-xl py-4 px-6 text-2xl my-8"
+        >
+          Vous devez être connecté pour effectuer une demande de devis
+        </div>
+
         <div class="mb-6">
           <label for="contact-firstname" class="flex mb-2">
             Prénom
@@ -166,7 +173,7 @@
           class="flex items-center"
           type="submit"
           :loading="loading"
-          :disabled="loading"
+          :disabled="loading || notAllowedToOrder"
         >
           Envoyer
         </l-button>
@@ -238,6 +245,16 @@ export default {
         required: requiredIf((nestedModel) => {
           return !nestedModel.file
         })
+      }
+    }
+  },
+
+  computed: {
+    notAllowedToOrder () {
+      if (!this.$store.state.currentUser && this.mode === 'order') {
+        return true
+      } else {
+        return false
       }
     }
   },
@@ -364,6 +381,7 @@ export default {
           this.successMessage = false
         }, 3000)
       } catch (err) {
+        this.resetLoading()
         this.errorMessage = true
         setTimeout(() => {
           this.errorMessage = false
