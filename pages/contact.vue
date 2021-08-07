@@ -122,14 +122,16 @@
           </l-select>
         </div>
         <div class="mb-6">
-          <label for="contact-message" class="flex mb-2">
-            Message
+          <label for="contact-message" class="flex mb-2 justify-between items-end">
+            <span>Message</span>
+            <span class="text-xl">{{ contact.message.length + '/300' }}</span>
           </label>
           <l-text-area
             id="contact-message"
             v-model="contact.message"
-            maxlength="160"
+            maxlength="300"
             class="w-full"
+            rows="8"
             :placeholder="
               mode === 'order'
                 ? 'Détaillez au maximum vos besoins ou téléchargez votre cahier des charges'
