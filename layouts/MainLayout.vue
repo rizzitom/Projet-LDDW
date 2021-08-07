@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <l-header />
-    <main class="pt-20 flex flex-1">
+    <main class="pt-20 grid flex-1">
       <nuxt />
     </main>
     <l-footer />
