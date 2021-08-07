@@ -14,6 +14,7 @@
       </div>
 
       <l-pricing-card
+        :to="{ name: 'contact', params: { mode: 'order', formula: 'standard' } }"
         class="col-span-2 sm:col-span-1"
         name="Standard"
         :price="3.75"
@@ -28,6 +29,7 @@
         warn="5 jours de travail minimum pour sélectionner cette formule"
       />
       <l-pricing-card
+        :to="{ name: 'contact', params: { mode: 'order', formula: 'flexible' } }"
         class="col-span-2 sm:col-span-1"
         name="Flexible"
         :price="5"

@@ -204,13 +204,13 @@ export default {
 
       mode: 'contact',
       contact: {
-        firstname: 'John',
-        lastname: 'Doe',
-        email: 'john@doe.com',
+        firstname: '',
+        lastname: '',
+        email: '',
         phone: '',
         formula: null,
         message: '',
-        budget: '90',
+        budget: '',
         file: null
       }
     }
@@ -246,6 +246,11 @@ export default {
     const modeParam = this.$route.params.mode
     if (modeParam) {
       this.mode = modeParam
+    }
+
+    const formulaParam = this.$route.params.formula
+    if (formulaParam) {
+      this.contact.formula = formulaParam
     }
   },
 
