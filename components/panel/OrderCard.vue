@@ -45,9 +45,9 @@
       <span>{{ returnDate }}</span>
     </div>
 
-    <hr v-if="isAdmin" class="mt-4">
+    <hr v-if="isAdmin && !order.canceled" class="mt-4">
 
-    <div v-if="isAdmin" class="pt-4 flex flex-col sm:flex-row">
+    <div v-if="isAdmin && !order.canceled" class="pt-4 flex flex-col sm:flex-row">
       <l-button
         small
         class="sm:mr-4 mb-4 sm:mb-0"
@@ -76,7 +76,7 @@
       </l-dialog>
 
       <l-button
-        v-if="order.step < 5 && !order.canceled"
+        v-if="order.step < 5"
         small
         class="sm:mr-4 mb-4 sm:mb-0"
         @click.stop="openCancelDialog()"
