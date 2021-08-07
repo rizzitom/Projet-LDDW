@@ -46,8 +46,9 @@
             <div :class="{ 'bg-yellow-200': error, 'rounded-xl': error }">
               <l-button
                 type="submit"
-                class="w-full"
+                class="w-full flex items-center justify-center"
                 :disabled="loading"
+                :loading="loading"
                 :class="{ 'opacity-80': loading }"
               >
                 Se connecter
@@ -104,22 +105,19 @@ export default {
   methods: {
     checkCredentials () {
       this.loading = true
-      this.$nuxt.$loading.start()
       setTimeout(() => {
         this.resetError()
         this.loading = true
         if (!this.$v.email.email || !this.$v.email.required) {
           this.resetLoading()
-          this.$nuxt.$loading.finish()
           this.error = 'Entrez un email valide'
         } else if (!this.$v.password.required) {
           this.resetLoading()
-          this.$nuxt.$loading.finish()
           this.error = 'Entrez votre mot de passe'
         } else {
           this.login()
         }
-      }, 500)
+      }, 250)
     },
 
     login () {
@@ -129,7 +127,6 @@ export default {
           this.$router.push('/')
         })
         .catch(() => {
-          this.$nuxt.$loading.finish()
           this.resetLoading()
           this.error = 'Connexion échouée: vérifiez vos identifiants'
         })
