@@ -122,7 +122,10 @@
           </l-select>
         </div>
         <div class="mb-6">
-          <label for="contact-message" class="flex mb-2 justify-between items-end">
+          <label
+            for="contact-message"
+            class="flex mb-2 justify-between items-end"
+          >
             <span>Message</span>
             <span class="text-xl">{{ contact.message.length + '/300' }}</span>
           </label>
@@ -219,8 +222,7 @@ export default {
         phone: '',
         formula: null,
         message: '',
-        budget: '',
-        file: null
+        budget: ''
       }
     }
   },
@@ -342,7 +344,9 @@ export default {
           email: contact.email,
           formula: contact.formula,
           step: 1,
-          subject: `Devis fomule ${contact.formula}${contact.budget ? ` - Budget max: ${contact.budget}€` : ''}`,
+          subject: `Devis fomule ${contact.formula}${
+            contact.budget ? ` - Budget max: ${contact.budget}€` : ''
+          }`,
           message: contact.message
         })
 
@@ -367,11 +371,7 @@ export default {
             \n<small>Formule: ${contact.formula} ${
               contact.budget ? `- Budget: ${contact.budget}€` : ''
             }</small>`,
-            attachments: [
-              {
-                path: URL
-              }
-            ]
+            attachments: [{ path: URL }]
           }
         })
 
@@ -411,8 +411,7 @@ export default {
         phone: '',
         formula: null,
         message: '',
-        budget: '',
-        file: ''
+        budget: ''
       }
     }
   },
