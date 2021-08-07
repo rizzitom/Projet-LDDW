@@ -342,7 +342,7 @@ export default {
           email: contact.email,
           formula: contact.formula,
           step: 1,
-          subject: 'test',
+          subject: `Devis fomule ${contact.formula}${contact.budget ? ` - Budget max: ${contact.budget}€` : ''}`,
           message: contact.message
         })
 
