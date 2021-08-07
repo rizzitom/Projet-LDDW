@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-36">
+  <div class="pb-36 w-full">
     <h1
       class="py-36 mb-36 text-white text-5xl font-semibold text-center bg-purple-600"
     >
@@ -68,7 +68,7 @@
         <template #description>
           Si vous souhaitez nous poser une question, vous pouvez nous contacter
           via les liens en pied de page ou encore via notre
-          <NuxtLink to="#" class="underline">
+          <NuxtLink to="/contact" class="underline">
             formulaire de contact.
           </NuxtLink>
         </template>

@@ -8,7 +8,7 @@
         />
       </li>
     </ul>
-    <div v-else class="h-full flex justify-center items-center">
+    <div v-else class="h-full w-full flex justify-center items-center">
       <l-empty title="Aucune commande" />
     </div>
   </div>

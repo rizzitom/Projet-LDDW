@@ -11,13 +11,16 @@
           révisions inclus.
         </span>
 
-        <div class="flex">
-          <l-button class="mr-5">
+        <div class="flex items-center">
+          <l-anchor
+            class="mr-5"
+            :to="{ name: 'contact', params: { mode: 'order' } }"
+          >
             Devis gratuit
-          </l-button>
-          <l-button variant>
+          </l-anchor>
+          <l-anchor variant to="/contact">
             Contact
-          </l-button>
+          </l-anchor>
         </div>
       </div>
       <div
@@ -29,11 +32,11 @@
 
 <script>
 import LandingSection from '../LandingSection.vue'
-import LButton from '../../common/LButton.vue'
+import LAnchor from '../../common/LAnchor.vue'
 
 export default {
   name: 'FirstSection',
 
-  components: { LandingSection, LButton }
+  components: { LandingSection, LAnchor }
 }
 </script>

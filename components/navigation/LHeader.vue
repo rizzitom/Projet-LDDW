@@ -17,7 +17,7 @@
       <l-anchor class="mx-5" variant to="/pricing">
         Tarifs
       </l-anchor>
-      <l-anchor class="mx-5" variant to="#">
+      <l-anchor class="mx-5" variant to="/contact">
         Contact
       </l-anchor>
     </div>

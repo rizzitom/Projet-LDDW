@@ -75,6 +75,16 @@
             chevron_right
           </span>
         </l-anchor>
+        <l-anchor
+          class="py-4 border-b flex items-center justify-between"
+          variant
+          to="/contact"
+        >
+          Contact
+          <span class="material-icons">
+            chevron_right
+          </span>
+        </l-anchor>
       </div>
     </div>
   </div>

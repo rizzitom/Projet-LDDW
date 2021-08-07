@@ -28,9 +28,9 @@
         </ul>
       </div>
 
-      <l-button class="w-full">
+      <l-anchor class="w-full block text-center" :to="to">
         Sélectionner
-      </l-button>
+      </l-anchor>
     </div>
     <div
       v-if="warn"
@@ -42,11 +42,11 @@
 </template>
 
 <script>
-import LButton from '../common/LButton.vue'
+import LAnchor from '../common/LAnchor.vue'
 
 export default {
   name: 'LPricingCard',
-  components: { LButton },
+  components: { LAnchor },
 
   props: {
     name: {
@@ -68,6 +68,10 @@ export default {
     warn: {
       type: String,
       default: null
+    },
+    to: {
+      type: Object,
+      required: true
     }
   }
 }

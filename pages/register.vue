@@ -73,7 +73,12 @@
             </div>
 
             <div :class="{ 'bg-yellow-200': error, 'rounded-xl': error }">
-              <l-button type="submit" class="w-full">
+              <l-button
+                type="submit"
+                class="w-full flex items-center justify-center"
+                :disabled="loading"
+                :loading="loading"
+              >
                 S'enregistrer
               </l-button>
               <p v-if="error" class="py-3 px-4 text-xl text-center">
@@ -144,42 +149,34 @@ export default {
     checkCredentials () {
       this.resetError()
       this.loading = true
-      this.$nuxt.$loading.start()
 
       setTimeout(() => {
         const newUser = this.$v.newUser
         if (!newUser.username.required) {
           this.error = "Veuillez entrer un nom d'utilisateur"
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.username.minLength || !newUser.username.maxLength) {
           this.error = `Le nom d'utilisateur doit contenir entre ${this.$v.newUser.username.$params.minLength.min} et ${this.$v.newUser.username.$params.maxLength.max} caractères`
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.email.required) {
           this.error = 'Veuillez saisir votre email'
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.email.email) {
           this.error = 'Veuillez saisir un email valide'
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.password.required) {
           this.error = 'Veuillez saisir votre mot de passe'
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.password.minLength) {
           this.error = `Le mot de passe doit contenir au moins ${this.$v.newUser.password.$params.minLength.min} caractères`
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else if (!newUser.repeatPassword.sameAsPassword) {
           this.error = 'Les mots de passe ne correspondent pas'
-          this.$nuxt.$loading.finish()
           this.resetLoading()
         } else {
           this.register()
         }
-      }, 500)
+      }, 250)
     },
 
     register () {
@@ -198,7 +195,6 @@ export default {
           this.$router.push('/')
         })
         .catch((error) => {
-          this.$nuxt.$loading.finish()
           throw new Error(error)
         })
     },
