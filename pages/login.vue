@@ -88,7 +88,10 @@ export default {
       email: '',
       password: '',
       error: '',
-      loading: false
+      loading: false,
+
+      title: 'Le design du web - Accéder à son compte',
+      image: 'https://i.ibb.co/PWdGCDn/Foresight-Engine-Blog-2x.png'
     }
   },
 
@@ -143,11 +146,53 @@ export default {
 
   head () {
     return {
-      title: 'Le design du web - Accéder à son compte',
+      title: this.title,
       link: [
         {
           rel: 'canonical',
           href: 'https://ledesignduweb.fr' + this.$route.path
+        }
+      ],
+      meta: [
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.image
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.title
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.image
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.image
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title
         }
       ]
     }
