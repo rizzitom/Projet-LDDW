@@ -44,7 +44,6 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxtjs/sentry',
     [
       '@nuxtjs/firebase',
       {
@@ -64,6 +63,13 @@ export default {
           },
           firestore: true,
           storage: true
+        }
+      },
+      '@nuxtjs/sentry',
+      {
+        sentry: {
+          dsn:
+            'https://c7a1e846fd6f4c1cb0c069889d733413@o1075246.ingest.sentry.io/6076269'
         }
       }
     ]
