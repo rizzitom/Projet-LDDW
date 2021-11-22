@@ -44,6 +44,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxtjs/sentry',
     [
       '@nuxtjs/firebase',
       {
