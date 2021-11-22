@@ -79,7 +79,7 @@ export default {
               trackComponents: true
             }
           },
-          browserOptions: {}
+          browserOptions: { tracingOrigins: [/^\//] }
         }
       }
     ]
