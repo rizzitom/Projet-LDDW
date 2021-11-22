@@ -16,6 +16,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sentry": "^5.1.5",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@sentry/tracing": "^6.15.0",
     "child_process": "^1.0.2",
     "core-js": "^3.6.5",
     "firebase": "^8.6.8",

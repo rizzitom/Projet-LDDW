@@ -69,7 +69,17 @@ export default {
       {
         sentry: {
           dsn:
-            'https://c7a1e846fd6f4c1cb0c069889d733413@o1075246.ingest.sentry.io/6076269'
+            'https://c7a1e846fd6f4c1cb0c069889d733413@o1075246.ingest.sentry.io/6076269',
+          tracesSampleRate: 0.8,
+          vueOptions: {
+            tracing: true,
+            tracingOptions: {
+              hooks: ['mount', 'update'],
+              timeout: 2000,
+              trackComponents: true
+            }
+          },
+          browserOptions: {}
         }
       }
     ]
